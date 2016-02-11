@@ -16,7 +16,7 @@ msg = """
    
       a/j         d/l
 
-            s/,
+            s/k
 For Holonomic mode (strafing), hold down the shift key:
 ---------------------------
    U    I    O
@@ -45,7 +45,7 @@ moveBindings = {
         'l':(0,0,0,-1),
         'd':(0,0,0,-1),
 
-        ',':(-1,0,0,0),
+        'k':(-1,0,0,0),
         's':(-1,0,0,0),
 
         'I':(1,0,0,0),
@@ -90,8 +90,8 @@ if __name__=="__main__":
     pub = rospy.Publisher('cmd_vel', Twist, queue_size = 1)
     rospy.init_node('teleop_twist_keyboard')
 
-    speed = rospy.get_param("~speed", 0.5)
-    turn = rospy.get_param("~turn", 0.05)
+    speed = rospy.get_param("~speed", 0.3)
+    turn = rospy.get_param("~turn", 0.03)
     x = 0
     y = 0
     z = 0
