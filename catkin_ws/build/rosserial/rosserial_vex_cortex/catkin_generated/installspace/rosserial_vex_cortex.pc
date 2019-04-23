@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/catkin_ws/install
+
+Name: rosserial_vex_cortex
+Description: Description of rosserial_vex_cortex
+Version: 0.8.0
+Cflags: 
+Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib 
+Requires: 

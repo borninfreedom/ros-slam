@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/catkin_ws/install
+
+Name: delta_lidar
+Description: Description of delta_lidar
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib 
+Requires: 
