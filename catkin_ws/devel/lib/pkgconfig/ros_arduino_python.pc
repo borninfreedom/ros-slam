@@ -1,8 +1,0 @@
-prefix=/home/nvidia/git/repos/ros/catkin_ws/devel
-
-Name: ros_arduino_python
-Description: Description of ros_arduino_python
-Version: 0.2.0
-Cflags: 
-Libs: -L/home/nvidia/git/repos/ros/catkin_ws/devel/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/nvidia/git/repos/ros/catkin_ws/devel
-
-Name: rosserial_mbed
-Description: Description of rosserial_mbed
-Version: 0.8.0
-Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/devel/include
-Libs: -L/home/nvidia/git/repos/ros/catkin_ws/devel/lib 
-Requires: message_runtime
