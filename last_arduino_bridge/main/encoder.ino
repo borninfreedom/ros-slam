@@ -51,7 +51,7 @@ void rightEncoderEvent() {
 }
 
 long readEncoder(int i){
-  if(i == LEFT) return left_enc_pos;
+  if(i == LEFT) return 0-left_enc_pos;
   else return right_enc_pos;
 }
 

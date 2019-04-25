@@ -7,7 +7,7 @@
 <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
 </node>
 
-<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="-0.025 0.02 0.095 0 0 0 /base_link /laser 50"/>
+<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="-0.04 0 0.12 0 0 0 /base_link /laser 50"/>
 
 <!-- gmapping node -->
 <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping">

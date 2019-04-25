@@ -26,7 +26,7 @@ int runCommand(){
   int i = 0;
   char *p = argv1;
   char *str;
-  int pid_args[4];
+  int pid_args[8];
   arg1 = atoi(argv1);
   arg2 = atoi(argv2);
 
@@ -84,10 +84,19 @@ int runCommand(){
           pid_args[i] = atoi(str);
           i++;
         }
-        Kp = pid_args[0];
-        Kd = pid_args[1];
-        Ki = pid_args[2];
-        Ko = pid_args[3];
+        left_Kp = pid_args[0];
+        left_Kd = pid_args[1];
+        left_Ki = pid_args[2];
+        left_Ko = pid_args[3];
+
+        right_Kp = pid_args[4];
+        right_Kd = pid_args[5];
+        right_Ki = pid_args[6];
+        right_Ko = pid_args[7];
+    //    Kp = pid_args[0];
+    //    Kd = pid_args[1];
+    //    Ki = pid_args[2];
+    //    Ko = pid_args[3];
         Serial.println("UPDATE_PID OK");
         break;
       default:
