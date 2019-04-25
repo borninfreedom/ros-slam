@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/catkin_ws/devel
+
+Name: rosserial_embeddedlinux
+Description: Description of rosserial_embeddedlinux
+Version: 0.8.0
+Cflags: 
+Libs: -L/home/nvidia/git/repos/ros/catkin_ws/devel/lib 
+Requires: 

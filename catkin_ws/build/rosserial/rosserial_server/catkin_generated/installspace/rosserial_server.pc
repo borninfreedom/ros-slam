@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/catkin_ws/install
+
+Name: rosserial_server
+Description: Description of rosserial_server
+Version: 0.8.0
+Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/install/include
+Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib 
+Requires: roscpp rosserial_msgs std_msgs topic_tools

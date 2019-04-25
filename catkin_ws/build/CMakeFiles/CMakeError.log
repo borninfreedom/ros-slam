@@ -1,0 +1,56 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_402a4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_402a4.dir/build.make CMakeFiles/cmTC_402a4.dir/build
+make[1]: Entering directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_402a4.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_402a4.dir/CheckSymbolExists.c.o   -c /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_402a4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_402a4.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_402a4.dir/CheckSymbolExists.c.o  -o cmTC_402a4 -rdynamic 
+CMakeFiles/cmTC_402a4.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x14)：对‘pthread_create’未定义的引用
+CheckSymbolExists.c:(.text+0x18)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_402a4.dir/build.make:97: recipe for target 'cmTC_402a4' failed
+make[1]: *** [cmTC_402a4] Error 1
+make[1]: Leaving directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_402a4/fast' failed
+make: *** [cmTC_402a4/fast] Error 2
+
+File /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_69c91/fast"
+/usr/bin/make -f CMakeFiles/cmTC_69c91.dir/build.make CMakeFiles/cmTC_69c91.dir/build
+make[1]: Entering directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_69c91.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_69c91.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_69c91
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69c91.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_69c91.dir/CheckFunctionExists.c.o  -o cmTC_69c91 -rdynamic -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_69c91.dir/build.make:97: recipe for target 'cmTC_69c91' failed
+make[1]: *** [cmTC_69c91] Error 1
+make[1]: Leaving directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_69c91/fast' failed
+make: *** [cmTC_69c91/fast] Error 2
+
+

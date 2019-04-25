@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/catkin_ws/install
+
+Name: jetsonbot_nav
+Description: Description of jetsonbot_nav
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib 
+Requires: 
