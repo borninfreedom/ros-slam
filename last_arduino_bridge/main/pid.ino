@@ -158,3 +158,17 @@ void updatePID(){
 
   setMotorSpeeds(leftPID.output, rightPID.output);
 }
+
+long readPidIn(int i){
+  long pidin = 0;
+  if (i == LEFT)  pidin = leftPID.PrevInput;
+  else  pidin = rightPID.PrevInput;
+  return pidin;
+}
+
+long readPidOut(int i){
+  long pidout = 0;
+  if(i == LEFT)   pidout = leftPID.output;
+  else    pidout = rightPID.output;
+  return pidout;
+}

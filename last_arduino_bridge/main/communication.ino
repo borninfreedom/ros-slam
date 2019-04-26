@@ -11,6 +11,8 @@
 #define UPDATE_PID     'u'
 #define DIGITAL_WRITE  'w'
 #define ANALOG_WRITE   'x'
+#define READ_PIDOUT    'f'
+#define READ_PIDIN     'i'
 void resetCommand(){
   cmd = NULL;
   memset(argv1,0,sizeof(argv1));
@@ -33,6 +35,16 @@ int runCommand(){
   switch(cmd){
     case GET_BAUDRATE:
       Serial.println(BAUDRATE);
+      break;
+    case READ_PIDIN:
+      Serial.print(readPidIn(LEFT));
+      Serial.print(" ");
+      Serial.println(readPidIn(RIGHT));
+      break;
+    case READ_PIDOUT:
+      Serial.print(readPidOut(LEFT));
+      Serial.print(" ");
+      Serial.println(readPidOut(RIGHT));
       break;
     case ANALOG_READ:
       Serial.println(analogRead(arg1));

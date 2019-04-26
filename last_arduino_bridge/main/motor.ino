@@ -18,15 +18,15 @@ void setMotorSpeed(int i, int spd){
     if (spd >= 0){
       directionLeft =  FORWARDS;
       digitalWrite(STBY,HIGH);
-      digitalWrite(BIN1,LOW);
-      digitalWrite(BIN2,HIGH);
+      digitalWrite(BIN1,HIGH);
+      digitalWrite(BIN2,LOW);
       analogWrite(ENB,spd);
     }
     else if (spd < 0){
       directionLeft = BACKWARDS;
       digitalWrite(STBY,HIGH);
-      digitalWrite(BIN1,HIGH);
-      digitalWrite(BIN2,LOW);
+      digitalWrite(BIN1,LOW);
+      digitalWrite(BIN2,HIGH);
       analogWrite(ENB,-spd);
     }
   }
@@ -34,15 +34,15 @@ void setMotorSpeed(int i, int spd){
     if(spd >= 0){
       directionRight = FORWARDS;
       digitalWrite(STBY,HIGH);
-      digitalWrite(AIN1,LOW);
-      digitalWrite(AIN2,HIGH);
+      digitalWrite(AIN1,HIGH);
+      digitalWrite(AIN2,LOW);
       analogWrite(ENA,spd);
     }
     else if (spd < 0){
       directionRight = BACKWARDS;
       digitalWrite(STBY,HIGH);
-      digitalWrite(AIN1,HIGH);
-      digitalWrite(AIN2,LOW);
+      digitalWrite(AIN1,LOW);
+      digitalWrite(AIN2,HIGH);
       analogWrite(ENA,-spd);
     }
   }

@@ -38,17 +38,21 @@ class BaseController:
         self.rate = float(rospy.get_param("~base_controller_rate", 10))
         self.timeout = rospy.get_param("~base_controller_timeout", 1.0)
         self.stopped = False
+        self.debugPID = False
                  
         pid_params = dict()
         pid_params['wheel_diameter'] = rospy.get_param("~wheel_diameter", "") 
         pid_params['wheel_track'] = rospy.get_param("~wheel_track", "")
         pid_params['encoder_resolution'] = rospy.get_param("~encoder_resolution", "") 
         pid_params['gear_reduction'] = rospy.get_param("~gear_reduction", 1.0)
-        pid_params['Kp'] = rospy.get_param("~Kp", 20)
-        pid_params['Kd'] = rospy.get_param("~Kd", 12)
-        pid_params['Ki'] = rospy.get_param("~Ki", 0)
-        pid_params['Ko'] = rospy.get_param("~Ko", 50)
-        
+        pid_params['left_Kp'] = rospy.get_param("~left_Kp", 20)
+        pid_params['left_Kd'] = rospy.get_param("~left_Kd", 12)
+        pid_params['left_Ki'] = rospy.get_param("~left_Ki", 0)
+        pid_params['left_Ko'] = rospy.get_param("~left_Ko", 50)
+        pid_params['right_Kp'] = rospy.get_param("~right_Kp", 20)
+        pid_params['right_Kd'] = rospy.get_param("~right_Kd", 12)
+        pid_params['right_Ki'] = rospy.get_param("~right_Ki", 0)
+        pid_params['right_Ko'] = rospy.get_param("~right_Ko", 50)
         self.accel_limit = rospy.get_param('~accel_limit', 0.1)
         self.motors_reversed = rospy.get_param("~motors_reversed", False)
         
@@ -94,6 +98,14 @@ class BaseController:
         rospy.loginfo("Started base controller for a base of " + str(self.wheel_track) + "m wide with " + str(self.encoder_resolution) + " ticks per rev")
         rospy.loginfo("Publishing odometry data at: " + str(self.rate) + " Hz using " + str(self.base_frame) + " as base frame")
         
+        if self.debugPID:
+        	self.lEncoderPub = rospy.Publisher('Lencoder',Int32)
+        	self.rEncoderPub = rospy.Publisher('Rencoder',Int32)
+        	self.lPidoutPub = rospy.Publisher('Lpidout',Int32)
+        	self.rPidoutPub = rospy.Publisher('Rpidout',Int32)
+        	self.lVelPub = rospy.Publisher('Lvel',Int32)
+        	self.rVelPub = rospy.Publisher('Rvel',Int32)
+        	
     def setup_pid(self, pid_params):
         # Check to see if any PID parameters are missing
         missing_params = False
@@ -110,15 +122,42 @@ class BaseController:
         self.encoder_resolution = pid_params['encoder_resolution']
         self.gear_reduction = pid_params['gear_reduction']
         
-        self.Kp = pid_params['Kp']
-        self.Kd = pid_params['Kd']
-        self.Ki = pid_params['Ki']
-        self.Ko = pid_params['Ko']
+        self.left_Kp = pid_params['left_Kp']
+        self.left_Kd = pid_params['left_Kd']
+        self.left_Ki = pid_params['left_Ki']
+        self.left_Ko = pid_params['left_Ko']
         
-        self.arduino.update_pid(self.Kp, self.Kd, self.Ki, self.Ko)
-
+        self.right_Kp = pid_params['right_Kp']
+        self.right_Kd = pid_params['right_Kd']
+        self.right_Ki = pid_params['right_Ki']
+        self.right_Ko = pid_params['right_Ko']
+        
+        self.arduino.update_pid(self.left_Kp, self.left_Kd, self.left_Ki, self.left_Ko, self.right_Kp, self.right_Kd, self.right_Ki, self.right_Ko)
+	
     def poll(self):
-        now = rospy.Time.now()
+        now = rospy.Time.now()	
+        if self.debugPID:
+        	rospy.logdebug("poll start--------------:")
+        	try:
+        		left_pidin, right_pidin = self.arduino.get_pidin()
+        		self.lEncoderPub.publish(left_pidin)
+        		self.rEncoderPub.publish(right_pidin)
+        		rospy.logdebug("left_pidin: "+str(left_pidin))
+        		rospy.logdebug("right_pidin: "+str(right_pidin))
+        	except:
+        		rospy.logerr("getpidin exception count: ")
+        		return
+        		
+        	try:
+        		left_pidout, right_pidout = self.arduino.get_pidout()
+        		self.lPidoutPub.publish(left_pidout)
+        		self.rPidoutPub.publish(right_pidout)
+        		rospy.logdebug("left_pidout: "+str(left_pidout))
+        		rospy.logdebug("right_pidout: "+str(right_pidout))
+        	except:
+        		rospy.logerr("getpidout exception count: ")
+        		return
+        			
         if now > self.t_next:
             # Read the encoders
             try:
@@ -211,7 +250,10 @@ class BaseController:
             # Set motor speeds in encoder ticks per PID loop
             if not self.stopped:
                 self.arduino.drive(self.v_left, self.v_right)
-                
+                if self.debugPID:
+                	self.lVelPub.publish(self.v_left)
+                	self.rVelPub.publish(self.v_right)
+                	
             self.t_next = now + self.t_delta
             
     def stop(self):

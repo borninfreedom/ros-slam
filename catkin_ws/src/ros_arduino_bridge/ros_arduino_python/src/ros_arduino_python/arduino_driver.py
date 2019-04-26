@@ -248,11 +248,11 @@ class Arduino:
         self.mutex.release()
         return ack == 'OK'
 
-    def update_pid(self, Kp, Kd, Ki, Ko):
+    def update_pid(self, left_Kp, left_Kd, left_Ki, left_Ko, right_Kp, right_Kd, right_Ki, right_Ko):
         ''' Set the PID parameters on the Arduino
         '''
         print "Updating PID parameters"
-        cmd = 'u ' + str(Kp) + ':' + str(Kd) + ':' + str(Ki) + ':' + str(Ko)
+        cmd = 'u ' + str(left_Kp) + ':' + str(left_Kd) + ':' + str(left_Ki) + ':' + str(left_Ko) + ':' + str(right_Kp) + ':' + str(right_Kd) + ':' + str(right_Ki) + ':' + str(right_Ko)
         self.execute_ack(cmd)
 
     def get_baud(self):
@@ -328,7 +328,25 @@ class Arduino:
             The returned position is converted from degrees to radians
         '''
         return radians(self.execute('t %d' %id))
-
+	
+	def get_pidin(self):
+		values = self.execute_array('i')
+		if len(values) != 2:
+			print "pidin was not 2"
+			raise SerialException
+			return None
+		else:
+			return values
+			
+	def get_pidout(self):
+		values = self.execute_array('f')
+		if len(values) != 2:
+			print "pidout was not 2"
+			raise SerialException
+			return None
+		else:
+			return values
+			
     def ping(self, pin):
         ''' The srf05/Ping command queries an SRF05/Ping sonar sensor
             connected to the General Purpose I/O line pinId for a distance,
