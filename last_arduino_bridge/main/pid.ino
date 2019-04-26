@@ -153,9 +153,8 @@ void updatePID(){
     if(leftPID.PrevInput != 0 || rightPID.PrevInput != 0) resetPID();
     return;
   }
-  dorightPID(&rightPID);
   doleftPID(&leftPID);
-
+  dorightPID(&rightPID);
   setMotorSpeeds(leftPID.output, rightPID.output);
 }
 

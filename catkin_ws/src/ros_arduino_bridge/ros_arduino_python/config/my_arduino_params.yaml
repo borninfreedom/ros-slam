@@ -19,22 +19,22 @@ base_frame: base_link
 # === Robot drivetrain parameters
 wheel_diameter: 0.068
 wheel_track: 0.18
-encoder_resolution: 2
+encoder_resolution: 72
 gear_reduction: 45.0
 motors_reversed: True
 
 # === PID parameters
-Kp: 10
+Kp: 20
 Kd: 12
 Ki: 0
 Ko: 50
 accel_limit: 1.0
-left_Kp: 10
+left_Kp: 20
 left_Kd: 12
 left_Ki: 0
 left_Ko: 50
 
-right_Kp: 8
+right_Kp: 20
 right_Kd: 12
 right_Ki: 0
 right_Ko: 50

@@ -121,6 +121,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/nvidia/git/repos/ros/catkin_ws/build/ros_arduino_bridge/ros_arduino_firmware/cmake_install.cmake")
   include("/home/nvidia/git/repos/ros/catkin_ws/build/ros_arduino_bridge/ros_arduino_python/cmake_install.cmake")
   include("/home/nvidia/git/repos/ros/catkin_ws/build/ros_arduino_bridge/ros_arduino_msgs/cmake_install.cmake")
+  include("/home/nvidia/git/repos/ros/catkin_ws/build/teleop_twist_keyboard/cmake_install.cmake")
   include("/home/nvidia/git/repos/ros/catkin_ws/build/jetsonbot_nav/cmake_install.cmake")
   include("/home/nvidia/git/repos/ros/catkin_ws/build/delta_lidar/cmake_install.cmake")
 

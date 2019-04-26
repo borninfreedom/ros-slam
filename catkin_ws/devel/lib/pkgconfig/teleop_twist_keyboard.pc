@@ -2,7 +2,7 @@ prefix=/home/nvidia/git/repos/ros/catkin_ws/devel
 
 Name: teleop_twist_keyboard
 Description: Description of teleop_twist_keyboard
-Version: 0.6.0
+Version: 0.6.2
 Cflags: 
 Libs: -L/home/nvidia/git/repos/ros/catkin_ws/devel/lib 
 Requires: 

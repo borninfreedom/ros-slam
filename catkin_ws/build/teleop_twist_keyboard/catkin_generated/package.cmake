@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "teleop_twist_keyboard")
-set(teleop_twist_keyboard_VERSION "0.6.0")
+set(teleop_twist_keyboard_VERSION "0.6.2")
 set(teleop_twist_keyboard_MAINTAINER "Austin Hendrix <namniart@gmail.com>")
 set(teleop_twist_keyboard_PACKAGE_FORMAT "1")
 set(teleop_twist_keyboard_BUILD_DEPENDS )

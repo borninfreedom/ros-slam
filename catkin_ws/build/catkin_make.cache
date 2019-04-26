@@ -1,2 +1,2 @@
-delta_lidar:jetsonbot_nav:ros_arduino_bridge/ros_arduino_bridge:ros_arduino_bridge/ros_arduino_firmware:ros_arduino_bridge/ros_arduino_msgs:ros_arduino_bridge/ros_arduino_python
+delta_lidar:jetsonbot_nav:ros_arduino_bridge/ros_arduino_bridge:ros_arduino_bridge/ros_arduino_firmware:ros_arduino_bridge/ros_arduino_msgs:ros_arduino_bridge/ros_arduino_python:teleop_twist_keyboard
 -DCATKIN_DEVEL_PREFIX=/home/nvidia/git/repos/ros/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/nvidia/git/repos/ros/catkin_ws/install -G Unix Makefiles
