@@ -61,10 +61,17 @@ void setup() {
    initEncoders();
    initMotorController();  
    resetPID();
+  // setMotorSpeeds(-80,-80);
+  //  setMotorSpeed(LEFT,170);
 }
 
 void loop() {
+ //  Serial.print(readEncoder(LEFT));
+ //   Serial.print(" ");
+  //  Serial.println(readEncoder(RIGHT));
+ //   delay(100);
   while(Serial.available() > 0){
+   
     chr = Serial.read();
     if(chr == 13){
       if(arg == 1)  argv1[index] = NULL;

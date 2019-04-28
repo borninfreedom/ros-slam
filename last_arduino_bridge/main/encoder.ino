@@ -8,13 +8,13 @@ void initEncoders(){
   pinMode(LEFT_ENC_B,INPUT);
   pinMode(RIGHT_ENC_A,INPUT);
   pinMode(RIGHT_ENC_B,INPUT);
-  attachInterrupt(5,leftEncoderEvent,CHANGE);
+  attachInterrupt(4,leftEncoderEvent,CHANGE);
   attachInterrupt(0,rightEncoderEvent,CHANGE);
 }
 
 void leftEncoderEvent(){
-  if (digitalRead(LEFT_ENC_A) == LOW) {
-      if (digitalRead(LEFT_ENC_B) == HIGH) {
+  if (digitalRead(LEFT_ENC_A) == HIGH) {
+      if (digitalRead(LEFT_ENC_B) == LOW) {
         left_enc_pos--;
       }
       else {
@@ -22,7 +22,7 @@ void leftEncoderEvent(){
       }
     }
     else {
-      if (digitalRead(LEFT_ENC_B) == HIGH) {
+      if (digitalRead(LEFT_ENC_B) == LOW) {
         left_enc_pos++;
       }
       else {

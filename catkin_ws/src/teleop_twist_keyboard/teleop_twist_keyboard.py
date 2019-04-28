@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+# -*- coding: utf-8 -*- 
 from __future__ import print_function
 
 import roslib; roslib.load_manifest('teleop_twist_keyboard')
@@ -10,13 +10,13 @@ from geometry_msgs.msg import Twist
 import sys, select, termios, tty
 
 msg = """
-Reading from the keyboard  and Publishing to Twist!
+控制指令：
 ---------------------------
-Moving around:
-   u    i    o
-   j    k    l
-   m    ,    .
+            w/i
+   
+      a/j         d/l
 
+            s/,
 For Holonomic mode (strafing), hold down the shift key:
 ---------------------------
    U    I    O
@@ -28,39 +28,47 @@ b : down (-z)
 
 anything else : stop
 
-q/z : increase/decrease max speeds by 10%
-w/x : increase/decrease only linear speed by 10%
-e/c : increase/decrease only angular speed by 10%
+q/z : 增加/减小 10% 的最大速度
+r/v : 增加/减小 10% 的线速度
+e/c : 增加/减小 10% 的角速度
 
-CTRL-C to quit
+CTRL-C 退出
 """
 
 moveBindings = {
         'i':(1,0,0,0),
-        'o':(1,0,0,-1),
+        'w':(1,0,0,0),
+    
         'j':(0,0,0,1),
+        'a':(0,0,0,1),
+
         'l':(0,0,0,-1),
-        'u':(1,0,0,1),
+        'd':(0,0,0,-1),
+
         ',':(-1,0,0,0),
-        '.':(-1,0,0,1),
-        'm':(-1,0,0,-1),
-        'O':(1,-1,0,0),
+        's':(-1,0,0,0),
+
         'I':(1,0,0,0),
+        'W':(1,0,0,0),
+
         'J':(0,1,0,0),
+        'A':(0,1,0,0),
+
         'L':(0,-1,0,0),
-        'U':(1,1,0,0),
+        'D':(0,-1,0,0),
+        
         '<':(-1,0,0,0),
-        '>':(-1,-1,0,0),
-        'M':(-1,1,0,0),
-        't':(0,0,1,0),
-        'b':(0,0,-1,0),
+        'S':(-1,0,0,0),
+        
+        'M':(-1,1,0,0)
+        
     }
 
 speedBindings={
         'q':(1.1,1.1),
         'z':(.9,.9),
-        'w':(1.1,1),
-        'x':(.9,1),
+        'r':(1.1,1),
+        'v':(.9,1),
         'e':(1,1.1),
         'c':(1,.9),
     }
@@ -74,7 +82,7 @@ def getKey():
 
 
 def vels(speed,turn):
-    return "currently:\tspeed %s\tturn %s " % (speed,turn)
+    return "当前:\tspeed %s\tturn %s " % (speed,turn)
 
 if __name__=="__main__":
     settings = termios.tcgetattr(sys.stdin)
@@ -83,7 +91,7 @@ if __name__=="__main__":
     rospy.init_node('teleop_twist_keyboard')
 
     speed = rospy.get_param("~speed", 0.5)
-    turn = rospy.get_param("~turn", 1.0)
+    turn = rospy.get_param("~turn", 0.05)
     x = 0
     y = 0
     z = 0
