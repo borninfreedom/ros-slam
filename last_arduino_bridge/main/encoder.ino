@@ -13,8 +13,8 @@ void initEncoders(){
 }
 
 void leftEncoderEvent(){
-  if (digitalRead(LEFT_ENC_A) == HIGH) {
-      if (digitalRead(LEFT_ENC_B) == LOW) {
+  if (digitalRead(LEFT_ENC_A) == LOW) {
+      if (digitalRead(LEFT_ENC_B) == HIGH) {
         left_enc_pos--;
       }
       else {
@@ -22,7 +22,7 @@ void leftEncoderEvent(){
       }
     }
     else {
-      if (digitalRead(LEFT_ENC_B) == LOW) {
+      if (digitalRead(LEFT_ENC_B) == HIGH) {
         left_enc_pos++;
       }
       else {
@@ -32,8 +32,8 @@ void leftEncoderEvent(){
 }
 
 void rightEncoderEvent() {
-    if (digitalRead(RIGHT_ENC_A) == LOW) {
-      if (digitalRead(RIGHT_ENC_B) == HIGH) {
+    if (digitalRead(RIGHT_ENC_A) == HIGH) {
+      if (digitalRead(RIGHT_ENC_B) == LOW) {
         right_enc_pos--;
       }
       else {
@@ -41,7 +41,7 @@ void rightEncoderEvent() {
       }
     }
     else {
-      if (digitalRead(RIGHT_ENC_B) == HIGH) {
+      if (digitalRead(RIGHT_ENC_B) == LOW) {
         right_enc_pos++;
       }
       else {

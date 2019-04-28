@@ -328,24 +328,24 @@ class Arduino:
             The returned position is converted from degrees to radians
         '''
         return radians(self.execute('t %d' %id))
-	
-	def get_pidin(self):
-		values = self.execute_array('i')
-		if len(values) != 2:
-			print "pidin was not 2"
-			raise SerialException
-			return None
-		else:
-			return values
-			
-	def get_pidout(self):
-		values = self.execute_array('f')
-		if len(values) != 2:
-			print "pidout was not 2"
-			raise SerialException
-			return None
-		else:
-			return values
+
+    def get_pidin(self):
+        values = self.execute_array('i')
+        if len(values) != 2:
+            print "pidin was not 2"
+            raise SerialException
+            return None
+        else:
+            return values
+
+    def get_pidout(self):
+        values = self.execute_array('f')
+        if len(values) != 2:
+            print "pidout was not 2"
+            raise SerialException
+            return None
+        else:
+            return values
 			
     def ping(self, pin):
         ''' The srf05/Ping command queries an SRF05/Ping sonar sensor

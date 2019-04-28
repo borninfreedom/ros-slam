@@ -23,7 +23,7 @@
 import roslib; roslib.load_manifest('ros_arduino_python')
 import rospy
 import os
-
+from std_msgs.msg import Int32
 from math import sin, cos, pi
 from geometry_msgs.msg import Quaternion, Twist, Pose
 from nav_msgs.msg import Odometry
@@ -38,7 +38,7 @@ class BaseController:
         self.rate = float(rospy.get_param("~base_controller_rate", 10))
         self.timeout = rospy.get_param("~base_controller_timeout", 1.0)
         self.stopped = False
-        self.debugPID = False
+        self.debugPID = True
                  
         pid_params = dict()
         pid_params['wheel_diameter'] = rospy.get_param("~wheel_diameter", "") 
@@ -99,12 +99,12 @@ class BaseController:
         rospy.loginfo("Publishing odometry data at: " + str(self.rate) + " Hz using " + str(self.base_frame) + " as base frame")
         
         if self.debugPID:
-        	self.lEncoderPub = rospy.Publisher('Lencoder',int32)
-        	self.rEncoderPub = rospy.Publisher('Rencoder',int32)
-        	self.lPidoutPub = rospy.Publisher('Lpidout',int32)
-        	self.rPidoutPub = rospy.Publisher('Rpidout',int32)
-        	self.lVelPub = rospy.Publisher('Lvel',int32)
-        	self.rVelPub = rospy.Publisher('Rvel',int32)
+        	self.lEncoderPub = rospy.Publisher('Lencoder',Int32, queue_size=5)
+        	self.rEncoderPub = rospy.Publisher('Rencoder',Int32, queue_size=5)
+        	self.lPidoutPub = rospy.Publisher('Lpidout',Int32, queue_size=5)
+        	self.rPidoutPub = rospy.Publisher('Rpidout',Int32, queue_size=5)
+        	self.lVelPub = rospy.Publisher('Lvel',Int32, queue_size=5)
+        	self.rVelPub = rospy.Publisher('Rvel',Int32, queue_size=5)
         	
     def setup_pid(self, pid_params):
         # Check to see if any PID parameters are missing
