@@ -1,0 +1,6 @@
+global_costmap: 
+ global_frame: /map #指定全局代价地图参考系为/map
+ robot_base_frame: base_link #指定机器人的base_frame为base_link
+ update_frequency: 5.0#指定地图更新频率
+ static_map: true #指定使用静态地图，并初始化
+ transform_tolerance: 0.8 #指定tf的更新容忍度为0.8，可以更加硬件的实际情况调整这个参数，在树莓派下小于0.8会不断的报tf发布超时的警告信息

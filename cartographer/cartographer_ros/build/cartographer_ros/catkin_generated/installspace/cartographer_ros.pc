@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/cartographer/cartographer_ros/install
+
+Name: cartographer_ros
+Description: Description of cartographer_ros
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/nvidia/git/repos/ros/cartographer/cartographer_ros/install/lib 
+Requires: message_runtime eigen_conversions geometry_msgs cartographer_ros_msgs roscpp sensor_msgs nav_msgs tf2 tf2_eigen tf2_ros

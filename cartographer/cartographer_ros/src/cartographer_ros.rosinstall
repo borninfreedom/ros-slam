@@ -1,0 +1,2 @@
+- git: {local-name: cartographer, uri: 'https://github.com/googlecartographer/cartographer.git'}
+- git: {local-name: cartographer_ros, uri: 'https://github.com/googlecartographer/cartographer_ros.git'}

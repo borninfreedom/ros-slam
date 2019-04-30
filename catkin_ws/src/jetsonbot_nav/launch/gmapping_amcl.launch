@@ -7,7 +7,7 @@
 <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
 </node>
 
-<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="-0.025 0.02 0.095 0.0 0.0 0 /base_link /laser 50"/>
+<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="-0.05 0.0 0.13 0.0 0.0 0 /base_link /laser 50"/>
 
 <!-- Map server -->
 <node name="map_server" pkg="map_server" type="map_server" args="$(find jetsonbot_nav)/maps/gmapping_map.yaml" />

@@ -7,7 +7,7 @@
 <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
 </node>
 
-<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="-0.04 0 0.12 0 0 0 /base_link /laser 50"/>
+<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="-0.05 0 0.13 0 0 0 /base_link /laser 50"/>
 
 <!-- gmapping node -->
 <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping">
@@ -23,7 +23,7 @@
 <param name="lsigma" value="0.075"/>
 <param name="ogain" value="3.0"/>
 <param name="lskip" value="0"/>
-<param name="minimumScore" value="50"/>
+<param name="minimumScore" value="200"/>
 <param name="srr" value="0.01"/>
 <param name="srt" value="0.02"/>
 <param name="str" value="0.01"/>
@@ -32,7 +32,7 @@
 <param name="angularUpdate" value="0.0436"/>
 <param name="temporalUpdate" value="-1.0"/>
 <param name="resampleThreshold" value="0.5"/>
-<param name="particles" value="30"/>
+<param name="particles" value="100"/>
 <!--
 <param name="xmin" value="-50.0"/>
 <param name="ymin" value="-50.0"/>

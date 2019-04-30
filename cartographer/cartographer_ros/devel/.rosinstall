@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/nvidia/git/repos/ros/cartographer/cartographer_ros/devel/setup.sh

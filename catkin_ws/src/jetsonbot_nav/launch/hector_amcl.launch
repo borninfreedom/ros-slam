@@ -7,7 +7,7 @@
 <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
 </node>
 
-<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="-0.025 0.02 0.095 0.0 0.0 0 /base_link /laser 50"/>
+<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="-0.05 0.0 0.13 0.0 0.0 0 /base_link /laser 50"/>
 
 <!-- Map server -->
 <node name="map_server" pkg="map_server" type="map_server" args="$(find jetsonbot_nav)/maps/hector_map.yaml" />
@@ -52,5 +52,13 @@
 <param name="transform_tolerance" value="0.1"/>
 <param name="recovery_alpha_slow" value="0.0"/>
 <param name="recovery_alpha_fast" value="0.0"/>
+</node>
+<!-- move_base node -->
+<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+<rosparam file="$(find jetsonbot_nav)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+<rosparam file="$(find jetsonbot_nav)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+<rosparam file="$(find jetsonbot_nav)/config/local_costmap_params.yaml" command="load" />
+<rosparam file="$(find jetsonbot_nav)/config/global_costmap_params.yaml" command="load" />
+<rosparam file="$(find jetsonbot_nav)/config/base_local_planner_params.yaml" command="load" />
 </node>
 </launch>

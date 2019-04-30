@@ -4,10 +4,10 @@
 #define RIGHT_ENC_B   3   //INT1
 
 void initEncoders(){
-  pinMode(LEFT_ENC_A,INPUT);
-  pinMode(LEFT_ENC_B,INPUT);
-  pinMode(RIGHT_ENC_A,INPUT);
-  pinMode(RIGHT_ENC_B,INPUT);
+  pinMode(LEFT_ENC_A,INPUT_PULLUP);
+  pinMode(LEFT_ENC_B,INPUT_PULLUP);
+  pinMode(RIGHT_ENC_A,INPUT_PULLUP);
+  pinMode(RIGHT_ENC_B,INPUT_PULLUP);
   attachInterrupt(4,leftEncoderEvent,CHANGE);
   attachInterrupt(0,rightEncoderEvent,CHANGE);
 }
