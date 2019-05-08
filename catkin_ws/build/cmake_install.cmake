@@ -117,6 +117,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/nvidia/git/repos/ros/catkin_ws/build/gtest/cmake_install.cmake")
+  include("/home/nvidia/git/repos/ros/catkin_ws/build/imu_tools/imu_tools/cmake_install.cmake")
   include("/home/nvidia/git/repos/ros/catkin_ws/build/ros_arduino_bridge/ros_arduino_bridge/cmake_install.cmake")
   include("/home/nvidia/git/repos/ros/catkin_ws/build/ros_arduino_bridge/ros_arduino_firmware/cmake_install.cmake")
   include("/home/nvidia/git/repos/ros/catkin_ws/build/ros_arduino_bridge/ros_arduino_python/cmake_install.cmake")
@@ -124,6 +125,9 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/nvidia/git/repos/ros/catkin_ws/build/teleop_twist_keyboard/cmake_install.cmake")
   include("/home/nvidia/git/repos/ros/catkin_ws/build/jetsonbot_nav/cmake_install.cmake")
   include("/home/nvidia/git/repos/ros/catkin_ws/build/delta_lidar/cmake_install.cmake")
+  include("/home/nvidia/git/repos/ros/catkin_ws/build/imu_tools/imu_complementary_filter/cmake_install.cmake")
+  include("/home/nvidia/git/repos/ros/catkin_ws/build/imu_tools/imu_filter_madgwick/cmake_install.cmake")
+  include("/home/nvidia/git/repos/ros/catkin_ws/build/imu_tools/rviz_imu_plugin/cmake_install.cmake")
 
 endif()
 

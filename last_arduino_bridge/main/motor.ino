@@ -2,6 +2,7 @@ boolean direction(int i){
   if (i == LEFT)  return directionLeft;
   else    return directionRight;
 }
+
 void initMotorController(){
   pinMode(ENA,OUTPUT);
   pinMode(ENB,OUTPUT);

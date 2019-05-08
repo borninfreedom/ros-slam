@@ -1,3 +1,4 @@
+#include <Wire.h>
 #define MAX_PWM   255
 #define LEFT            0
 #define RIGHT           1
@@ -44,7 +45,7 @@ volatile long left_enc_pos = 0L;
 volatile long right_enc_pos = 0L;
 typedef struct{
   double TargetTicksPerFrame;  //在每帧的目标速度
-  long Encoder;     //编码器数量
+  long Encoder;     //编码器脉冲数量
   long PrevEnc;
 //参数的具体意义见 http://brettbeauregard.com/blog/2011/04/improving-the-beginner%E2%80%99s-pid-derivative-kick/
 // http://brettbeauregard.com/blog/2011/04/improving-the-beginner%E2%80%99s-pid-tuning-changes/ 
@@ -58,18 +59,15 @@ SetPointInfo leftPID, rightPID;
 
 void setup() {
    Serial.begin(BAUDRATE);
+   Wire.begin();
+   gy85_init();
    initEncoders();
    initMotorController();  
    resetPID();
-  // setMotorSpeeds(-80,-80);
-  //  setMotorSpeed(LEFT,170);
+   
 }
 
 void loop() {
- //  Serial.print(readEncoder(LEFT));
- //   Serial.print(" ");
-  //  Serial.println(readEncoder(RIGHT));
- //   delay(100);
   while(Serial.available() > 0){
    
     chr = Serial.read();

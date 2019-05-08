@@ -53,4 +53,14 @@
 <param name="recovery_alpha_slow" value="0.0"/>
 <param name="recovery_alpha_fast" value="0.0"/>
 </node>
+
+<!-- move_base node -->
+<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+<rosparam file="$(find jetsonbot_nav)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+<rosparam file="$(find jetsonbot_nav)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+<rosparam file="$(find jetsonbot_nav)/config/local_costmap_params.yaml" command="load" />
+<rosparam file="$(find jetsonbot_nav)/config/global_costmap_params.yaml" command="load" />
+<rosparam file="$(find jetsonbot_nav)/config/base_local_planner_params.yaml" command="load" />
+</node>
+
 </launch>

@@ -13,6 +13,7 @@
 #define ANALOG_WRITE   'x'
 #define READ_PIDOUT    'f'
 #define READ_PIDIN     'i'
+#define READ_IMU       'g'
 void resetCommand(){
   cmd = NULL;
   memset(argv1,0,sizeof(argv1));
@@ -33,6 +34,17 @@ int runCommand(){
   arg2 = atoi(argv2);
 
   switch(cmd){
+    case READ_IMU:
+      int gx, gy, gz;
+      int ax, ay, az;
+      int cx, cy, cz;
+     // ReadGyro(&gx, &gy, &gz);
+     ReadCompass(&cx, &cy, &cz);
+    //  ReadAccelerometor(&ax, &ay, &az);
+      Serial.print(cx); Serial.print(",");
+      Serial.print(cy); Serial.print(",");
+      Serial.println(cz);
+      break;
     case GET_BAUDRATE:
       Serial.println(BAUDRATE);
       break;

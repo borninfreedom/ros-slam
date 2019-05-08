@@ -1,2 +1,0 @@
-cartographer_ros:cartographer_ros_msgs:cartographer_rviz
--DCATKIN_DEVEL_PREFIX=/home/nvidia/git/repos/ros/cartographer/cartographer_ros/devel -DCMAKE_INSTALL_PREFIX=/home/nvidia/git/repos/ros/cartographer/cartographer_ros/install -G Unix Makefiles

@@ -1,8 +1,0 @@
-prefix=/home/nvidia/git/repos/ros/cartographer/cartographer_ros/install
-
-Name: cartographer_ros_msgs
-Description: Description of cartographer_ros_msgs
-Version: 1.0.0
-Cflags: -I/home/nvidia/git/repos/ros/cartographer/cartographer_ros/install/include
-Libs: -L/home/nvidia/git/repos/ros/cartographer/cartographer_ros/install/lib 
-Requires: 

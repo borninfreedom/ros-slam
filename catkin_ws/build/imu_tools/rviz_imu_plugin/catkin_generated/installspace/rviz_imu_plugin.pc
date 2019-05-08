@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/catkin_ws/install
+
+Name: rviz_imu_plugin
+Description: Description of rviz_imu_plugin
+Version: 1.1.7
+Cflags: 
+Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib 
+Requires: rviz

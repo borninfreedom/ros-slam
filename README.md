@@ -230,3 +230,4 @@ sudo mkfontscale
 sudo mkfontdir
 sudo fc-cache
 ```
+# TX2:换源 https://blog.csdn.net/qlulibin/article/details/80271096
