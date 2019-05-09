@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Cost functions &mdash; Cartographer 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Cartographer 1.0.0 documentation" href="index.html" />
+    <link rel="prev" title="Terminology" href="terminology.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="terminology.html" title="Terminology"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Cartographer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cost-functions">
+<h1>Cost functions<a class="headerlink" href="#cost-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="relative-transform-error-2d">
+<h2>Relative Transform Error 2D<a class="headerlink" href="#relative-transform-error-2d" title="Permalink to this headline">¶</a></h2>
+<p>Given two poses
+<span class="math">\(\mathbf{p_i} = [\mathbf{x_i}; \theta_i] = [x_i, y_i, \theta_i]^T\)</span>
+and <span class="math">\(\mathbf{p_j} = [\mathbf{x_j}; \theta_j] = [x_j, y_j, \theta_j]^T\)</span>
+the transformation <span class="math">\(\mathbf T\)</span> from the coordinate frame <span class="math">\(j\)</span> to the
+coordinate frame <span class="math">\(i\)</span> has the following form</p>
+<div class="math">
+\[\begin{split}\mathbf{T}( \mathbf{p_i},\mathbf{p_j}) =
+\left[
+  \begin{array}{c}
+       R(\theta_i)^T (\mathbf x_j - \mathbf x_i) \\
+       \theta_j-\theta_i
+  \end{array}
+\right]\end{split}\]</div>
+<p>where <span class="math">\(R(\theta_i)^T\)</span> is the rotation matrix of <span class="math">\(\theta_i\)</span>.</p>
+<p>The weighted error <span class="math">\(f:\mathbb R^6 \mapsto \mathbb R^3\)</span> between
+<span class="math">\(\mathbf T\)</span> and the measured transformation <span class="math">\(\mathbf T_{ij}^m =
+[\mathbf x_{ij}^m; \theta_j^m]\)</span> from the coordinate frame <span class="math">\(j\)</span> to the
+coordinate frame <span class="math">\(i\)</span> can be computed as</p>
+<div class="math">
+\[\begin{split}\mathbf f( \mathbf{p_i},\mathbf{p_j}) =
+\left[
+  w_{\text{t}} \; w_{\text{r}}
+\right]
+\left(
+  \mathbf T_{ij}^m - \mathbf T( \mathbf{p_i},\mathbf{p_j})
+\right) =
+\left[
+  \begin{array}{c}
+     w_{\text{t}}\left(
+       \mathbf x_{ij}^m - R(\theta_i)^T (\mathbf x_j - \mathbf x_i)
+     \right) \\
+     w_{\text{r}}\left(
+       \mathrm{clamp}(\theta_{ij}^m - (\theta_j-\theta_i))
+     \right)
+  \end{array}
+\right]\end{split}\]</div>
+<p>where <span class="math">\(w_t\)</span> and <span class="math">\(w_r\)</span> are weights for translation and rotation
+respectively and <span class="math">\(\mathrm{clamp}: \mathbb R \mapsto [-\pi, \pi]\)</span>
+normalizes the angle difference.</p>
+<p>Jacobian matrix  <span class="math">\(J_f\)</span> is given by:</p>
+<div class="math">
+\[\begin{split}\begin{align}
+  J_f( \mathbf{p_i},\mathbf{p_j}) &amp;=
+  \left[
+    \frac{\partial\mathbf f}{\partial x_i} \quad
+    \frac{\partial\mathbf f}{\partial y_i} \quad
+    \frac{\partial\mathbf f}{\partial \theta_i} \quad
+    \frac{\partial\mathbf f}{\partial x_j} \quad
+    \frac{\partial\mathbf f}{\partial y_j} \quad
+    \frac{\partial\mathbf f}{\partial \theta_j}
+  \right] \\
+  &amp;\mathstrut \\
+  &amp;=
+  \left[
+    \begin{array}{cccc}
+        w_{\text{t}} R^T(\theta_i)
+          &amp; -w_{\text{t}} {\frac{\mathrm d R^T(\theta_i)}{\mathrm d \theta}}(\mathbf x_j - \mathbf x_i)
+          &amp; -w_{\text{t}} R^T(\theta_i)
+          &amp; \mathbf{0} \\
+       \mathbf{0}^T
+        &amp; w_{\text{r}}
+        &amp; \mathbf{0}^T
+        &amp; -w_{\text{r}}
+    \end{array}
+  \right]
+\end{align}\end{split}\]</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Cost functions</a><ul>
+<li><a class="reference internal" href="#relative-transform-error-2d">Relative Transform Error 2D</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="terminology.html"
+                        title="previous chapter">Terminology</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/cost_functions.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="terminology.html" title="Terminology"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Cartographer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016 The Cartographer Authors.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

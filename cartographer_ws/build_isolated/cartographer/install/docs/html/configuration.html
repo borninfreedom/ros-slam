@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuration &mdash; Cartographer 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Cartographer 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Evaluation" href="evaluation.html" />
+    <link rel="prev" title="Cartographer" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="evaluation.html" title="Evaluation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Cartographer"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Cartographer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cartographer-common-proto-ceressolveroptions">
+<h2>cartographer.common.proto.CeresSolverOptions<a class="headerlink" href="#cartographer-common-proto-ceressolveroptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>bool use_nonmonotonic_steps</dt>
+<dd>Configure the Ceres solver. See the Ceres documentation for more
+information: <a class="reference external" href="https://code.google.com/p/ceres-solver/">https://code.google.com/p/ceres-solver/</a></dd>
+<dt>int32 max_num_iterations</dt>
+<dd>Not yet documented.</dd>
+<dt>int32 num_threads</dt>
+<dd>Not yet documented.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-pose-graph-proto-constraintbuilderoptions">
+<h2>cartographer.mapping.pose_graph.proto.ConstraintBuilderOptions<a class="headerlink" href="#cartographer-mapping-pose-graph-proto-constraintbuilderoptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>double sampling_ratio</dt>
+<dd>A constraint will be added if the proportion of added constraints to
+potential constraints drops below this number.</dd>
+<dt>double max_constraint_distance</dt>
+<dd>Threshold for poses to be considered near a submap.</dd>
+<dt>double min_score</dt>
+<dd>Threshold for the scan match score below which a match is not considered.
+Low scores indicate that the scan and map do not look similar.</dd>
+<dt>double global_localization_min_score</dt>
+<dd>Threshold below which global localizations are not trusted.</dd>
+<dt>double loop_closure_translation_weight</dt>
+<dd>Weight used in the optimization problem for the translational component of
+loop closure constraints.</dd>
+<dt>double loop_closure_rotation_weight</dt>
+<dd>Weight used in the optimization problem for the rotational component of
+loop closure constraints.</dd>
+<dt>bool log_matches</dt>
+<dd>If enabled, logs information of loop-closing constraints for debugging.</dd>
+<dt>cartographer.mapping_2d.scan_matching.proto.FastCorrelativeScanMatcherOptions fast_correlative_scan_matcher_options</dt>
+<dd>Options for the internally used scan matchers.</dd>
+<dt>cartographer.mapping_2d.scan_matching.proto.CeresScanMatcherOptions ceres_scan_matcher_options</dt>
+<dd>Not yet documented.</dd>
+<dt>cartographer.mapping_3d.scan_matching.proto.FastCorrelativeScanMatcherOptions fast_correlative_scan_matcher_options_3d</dt>
+<dd>Not yet documented.</dd>
+<dt>cartographer.mapping_3d.scan_matching.proto.CeresScanMatcherOptions ceres_scan_matcher_options_3d</dt>
+<dd>Not yet documented.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-pose-graph-proto-optimizationproblemoptions">
+<h2>cartographer.mapping.pose_graph.proto.OptimizationProblemOptions<a class="headerlink" href="#cartographer-mapping-pose-graph-proto-optimizationproblemoptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>double huber_scale</dt>
+<dd>Scaling parameter for Huber loss function.</dd>
+<dt>double acceleration_weight</dt>
+<dd>Scaling parameter for the IMU acceleration term.</dd>
+<dt>double rotation_weight</dt>
+<dd>Scaling parameter for the IMU rotation term.</dd>
+<dt>double local_slam_pose_translation_weight</dt>
+<dd>Scaling parameter for translation between consecutive nodes based on the local SLAM pose.</dd>
+<dt>double local_slam_pose_rotation_weight</dt>
+<dd>Scaling parameter for rotation between consecutive nodes based on the local SLAM pose.</dd>
+<dt>double odometry_translation_weight</dt>
+<dd>Scaling parameter for translation between consecutive nodes based on the odometry.</dd>
+<dt>double odometry_rotation_weight</dt>
+<dd>Scaling parameter for rotation between consecutive nodes based on the odometry.</dd>
+<dt>double fixed_frame_pose_translation_weight</dt>
+<dd>Scaling parameter for the FixedFramePose translation.</dd>
+<dt>double fixed_frame_pose_rotation_weight</dt>
+<dd>Scaling parameter for the FixedFramePose rotation.</dd>
+<dt>bool log_solver_summary</dt>
+<dd>If true, the Ceres solver summary will be logged for every optimization.</dd>
+<dt>cartographer.common.proto.CeresSolverOptions ceres_solver_options</dt>
+<dd>Not yet documented.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-proto-mapbuilderoptions">
+<h2>cartographer.mapping.proto.MapBuilderOptions<a class="headerlink" href="#cartographer-mapping-proto-mapbuilderoptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>bool use_trajectory_builder_2d</dt>
+<dd>Not yet documented.</dd>
+<dt>bool use_trajectory_builder_3d</dt>
+<dd>Not yet documented.</dd>
+<dt>int32 num_background_threads</dt>
+<dd>Number of threads to use for background computations.</dd>
+<dt>cartographer.mapping.proto.PoseGraphOptions pose_graph_options</dt>
+<dd>Not yet documented.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-proto-motionfilteroptions">
+<h2>cartographer.mapping.proto.MotionFilterOptions<a class="headerlink" href="#cartographer-mapping-proto-motionfilteroptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>double max_time_seconds</dt>
+<dd>Threshold above which range data is inserted based on time.</dd>
+<dt>double max_distance_meters</dt>
+<dd>Threshold above which range data is inserted based on linear motion.</dd>
+<dt>double max_angle_radians</dt>
+<dd>Threshold above which range data is inserted based on rotational motion.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-proto-posegraphoptions">
+<h2>cartographer.mapping.proto.PoseGraphOptions<a class="headerlink" href="#cartographer-mapping-proto-posegraphoptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>int32 optimize_every_n_nodes</dt>
+<dd>Online loop closure: If positive, will run the loop closure while the map
+is built.</dd>
+<dt>cartographer.mapping.pose_graph.proto.ConstraintBuilderOptions constraint_builder_options</dt>
+<dd>Options for the constraint builder.</dd>
+<dt>double matcher_translation_weight</dt>
+<dd>Weight used in the optimization problem for the translational component of
+non-loop-closure scan matcher constraints.</dd>
+<dt>double matcher_rotation_weight</dt>
+<dd>Weight used in the optimization problem for the rotational component of
+non-loop-closure scan matcher constraints.</dd>
+<dt>cartographer.mapping.pose_graph.proto.OptimizationProblemOptions optimization_problem_options</dt>
+<dd>Options for the optimization problem.</dd>
+<dt>int32 max_num_final_iterations</dt>
+<dd>Number of iterations to use in &#8216;optimization_problem_options&#8217; for the final
+optimization.</dd>
+<dt>double global_sampling_ratio</dt>
+<dd>Rate at which we sample a single trajectory&#8217;s nodes for global
+localization.</dd>
+<dt>bool log_residual_histograms</dt>
+<dd>Whether to output histograms for the pose residuals.</dd>
+<dt>double global_constraint_search_after_n_seconds</dt>
+<dd>If for the duration specified by this option no global contraint has been
+added between two trajectories, loop closure searches will be performed
+globally rather than in a smaller search window.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-proto-trajectorybuilderoptions">
+<h2>cartographer.mapping.proto.TrajectoryBuilderOptions<a class="headerlink" href="#cartographer-mapping-proto-trajectorybuilderoptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>cartographer.mapping_2d.proto.LocalTrajectoryBuilderOptions trajectory_builder_2d_options</dt>
+<dd>Not yet documented.</dd>
+<dt>cartographer.mapping_3d.proto.LocalTrajectoryBuilderOptions trajectory_builder_3d_options</dt>
+<dd>Not yet documented.</dd>
+<dt>bool pure_localization</dt>
+<dd>Not yet documented.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-2d-proto-localtrajectorybuilderoptions">
+<h2>cartographer.mapping_2d.proto.LocalTrajectoryBuilderOptions<a class="headerlink" href="#cartographer-mapping-2d-proto-localtrajectorybuilderoptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>float min_range</dt>
+<dd>Rangefinder points outside these ranges will be dropped.</dd>
+<dt>float max_range</dt>
+<dd>Not yet documented.</dd>
+<dt>float min_z</dt>
+<dd>Not yet documented.</dd>
+<dt>float max_z</dt>
+<dd>Not yet documented.</dd>
+<dt>float missing_data_ray_length</dt>
+<dd>Points beyond &#8216;max_range&#8217; will be inserted with this length as empty space.</dd>
+<dt>int32 num_accumulated_range_data</dt>
+<dd>Number of range data to accumulate into one unwarped, combined range data
+to use for scan matching.</dd>
+<dt>float voxel_filter_size</dt>
+<dd>Voxel filter that gets applied to the range data immediately after
+cropping.</dd>
+<dt>cartographer.sensor.proto.AdaptiveVoxelFilterOptions adaptive_voxel_filter_options</dt>
+<dd>Voxel filter used to compute a sparser point cloud for matching.</dd>
+<dt>cartographer.sensor.proto.AdaptiveVoxelFilterOptions loop_closure_adaptive_voxel_filter_options</dt>
+<dd>Voxel filter used to compute a sparser point cloud for finding loop
+closures.</dd>
+<dt>bool use_online_correlative_scan_matching</dt>
+<dd>Whether to solve the online scan matching first using the correlative scan
+matcher to generate a good starting point for Ceres.</dd>
+<dt>cartographer.mapping_2d.scan_matching.proto.RealTimeCorrelativeScanMatcherOptions real_time_correlative_scan_matcher_options</dt>
+<dd>Not yet documented.</dd>
+<dt>cartographer.mapping_2d.scan_matching.proto.CeresScanMatcherOptions ceres_scan_matcher_options</dt>
+<dd>Not yet documented.</dd>
+<dt>cartographer.mapping.proto.MotionFilterOptions motion_filter_options</dt>
+<dd>Not yet documented.</dd>
+<dt>double imu_gravity_time_constant</dt>
+<dd>Time constant in seconds for the orientation moving average based on
+observed gravity via the IMU. It should be chosen so that the error
+1. from acceleration measurements not due to gravity (which gets worse when
+the constant is reduced) and
+2. from integration of angular velocities (which gets worse when the
+constant is increased) is balanced.</dd>
+<dt>cartographer.mapping_2d.proto.SubmapsOptions submaps_options</dt>
+<dd>Not yet documented.</dd>
+<dt>bool use_imu_data</dt>
+<dd>True if IMU data should be expected and used.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-2d-proto-rangedatainserteroptions">
+<h2>cartographer.mapping_2d.proto.RangeDataInserterOptions<a class="headerlink" href="#cartographer-mapping-2d-proto-rangedatainserteroptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>double hit_probability</dt>
+<dd>Probability change for a hit (this will be converted to odds and therefore
+must be greater than 0.5).</dd>
+<dt>double miss_probability</dt>
+<dd>Probability change for a miss (this will be converted to odds and therefore
+must be less than 0.5).</dd>
+<dt>bool insert_free_space</dt>
+<dd>If &#8216;false&#8217;, free space will not change the probabilities in the occupancy
+grid.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-2d-proto-submapsoptions">
+<h2>cartographer.mapping_2d.proto.SubmapsOptions<a class="headerlink" href="#cartographer-mapping-2d-proto-submapsoptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>double resolution</dt>
+<dd>Resolution of the map in meters.</dd>
+<dt>int32 num_range_data</dt>
+<dd>Number of range data before adding a new submap. Each submap will get twice
+the number of range data inserted: First for initialization without being
+matched against, then while being matched.</dd>
+<dt>cartographer.mapping_2d.proto.RangeDataInserterOptions range_data_inserter_options</dt>
+<dd>Not yet documented.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-2d-scan-matching-proto-ceresscanmatcheroptions">
+<h2>cartographer.mapping_2d.scan_matching.proto.CeresScanMatcherOptions<a class="headerlink" href="#cartographer-mapping-2d-scan-matching-proto-ceresscanmatcheroptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>double occupied_space_weight</dt>
+<dd>Scaling parameters for each cost functor.</dd>
+<dt>double translation_weight</dt>
+<dd>Not yet documented.</dd>
+<dt>double rotation_weight</dt>
+<dd>Not yet documented.</dd>
+<dt>cartographer.common.proto.CeresSolverOptions ceres_solver_options</dt>
+<dd>Configure the Ceres solver. See the Ceres documentation for more
+information: <a class="reference external" href="https://code.google.com/p/ceres-solver/">https://code.google.com/p/ceres-solver/</a></dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-2d-scan-matching-proto-fastcorrelativescanmatcheroptions">
+<h2>cartographer.mapping_2d.scan_matching.proto.FastCorrelativeScanMatcherOptions<a class="headerlink" href="#cartographer-mapping-2d-scan-matching-proto-fastcorrelativescanmatcheroptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>double linear_search_window</dt>
+<dd>Minimum linear search window in which the best possible scan alignment
+will be found.</dd>
+<dt>double angular_search_window</dt>
+<dd>Minimum angular search window in which the best possible scan alignment
+will be found.</dd>
+<dt>int32 branch_and_bound_depth</dt>
+<dd>Number of precomputed grids to use.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-2d-scan-matching-proto-realtimecorrelativescanmatcheroptions">
+<h2>cartographer.mapping_2d.scan_matching.proto.RealTimeCorrelativeScanMatcherOptions<a class="headerlink" href="#cartographer-mapping-2d-scan-matching-proto-realtimecorrelativescanmatcheroptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>double linear_search_window</dt>
+<dd>Minimum linear search window in which the best possible scan alignment
+will be found.</dd>
+<dt>double angular_search_window</dt>
+<dd>Minimum angular search window in which the best possible scan alignment
+will be found.</dd>
+<dt>double translation_delta_cost_weight</dt>
+<dd>Weights applied to each part of the score.</dd>
+<dt>double rotation_delta_cost_weight</dt>
+<dd>Not yet documented.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-3d-proto-localtrajectorybuilderoptions">
+<h2>cartographer.mapping_3d.proto.LocalTrajectoryBuilderOptions<a class="headerlink" href="#cartographer-mapping-3d-proto-localtrajectorybuilderoptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>float min_range</dt>
+<dd>Rangefinder points outside these ranges will be dropped.</dd>
+<dt>float max_range</dt>
+<dd>Not yet documented.</dd>
+<dt>int32 num_accumulated_range_data</dt>
+<dd>Number of range data to accumulate into one unwarped, combined range data
+to use for scan matching.</dd>
+<dt>float voxel_filter_size</dt>
+<dd>Voxel filter that gets applied to the range data immediately after
+cropping.</dd>
+<dt>cartographer.sensor.proto.AdaptiveVoxelFilterOptions high_resolution_adaptive_voxel_filter_options</dt>
+<dd>Voxel filter used to compute a sparser point cloud for matching.</dd>
+<dt>cartographer.sensor.proto.AdaptiveVoxelFilterOptions low_resolution_adaptive_voxel_filter_options</dt>
+<dd>Not yet documented.</dd>
+<dt>bool use_online_correlative_scan_matching</dt>
+<dd>Whether to solve the online scan matching first using the correlative scan
+matcher to generate a good starting point for Ceres.</dd>
+<dt>cartographer.mapping_2d.scan_matching.proto.RealTimeCorrelativeScanMatcherOptions real_time_correlative_scan_matcher_options</dt>
+<dd>Not yet documented.</dd>
+<dt>cartographer.mapping_3d.scan_matching.proto.CeresScanMatcherOptions ceres_scan_matcher_options</dt>
+<dd>Not yet documented.</dd>
+<dt>cartographer.mapping.proto.MotionFilterOptions motion_filter_options</dt>
+<dd>Not yet documented.</dd>
+<dt>double imu_gravity_time_constant</dt>
+<dd>Time constant in seconds for the orientation moving average based on
+observed gravity via the IMU. It should be chosen so that the error
+1. from acceleration measurements not due to gravity (which gets worse when
+the constant is reduced) and
+2. from integration of angular velocities (which gets worse when the
+constant is increased) is balanced.</dd>
+<dt>int32 rotational_histogram_size</dt>
+<dd>Number of histogram buckets for the rotational scan matcher.</dd>
+<dt>cartographer.mapping_3d.proto.SubmapsOptions submaps_options</dt>
+<dd>Not yet documented.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-3d-proto-rangedatainserteroptions">
+<h2>cartographer.mapping_3d.proto.RangeDataInserterOptions<a class="headerlink" href="#cartographer-mapping-3d-proto-rangedatainserteroptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>double hit_probability</dt>
+<dd>Probability change for a hit (this will be converted to odds and therefore
+must be greater than 0.5).</dd>
+<dt>double miss_probability</dt>
+<dd>Probability change for a miss (this will be converted to odds and therefore
+must be less than 0.5).</dd>
+<dt>int32 num_free_space_voxels</dt>
+<dd>Up to how many free space voxels are updated for scan matching.
+0 disables free space.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-3d-proto-submapsoptions">
+<h2>cartographer.mapping_3d.proto.SubmapsOptions<a class="headerlink" href="#cartographer-mapping-3d-proto-submapsoptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>double high_resolution</dt>
+<dd>Resolution of the &#8216;high_resolution&#8217; map in meters used for local SLAM and
+loop closure.</dd>
+<dt>double high_resolution_max_range</dt>
+<dd>Maximum range to filter the point cloud to before insertion into the
+&#8216;high_resolution&#8217; map.</dd>
+<dt>double low_resolution</dt>
+<dd>Resolution of the &#8216;low_resolution&#8217; version of the map in meters used for
+local SLAM only.</dd>
+<dt>int32 num_range_data</dt>
+<dd>Number of range data before adding a new submap. Each submap will get twice
+the number of range data inserted: First for initialization without being
+matched against, then while being matched.</dd>
+<dt>cartographer.mapping_3d.proto.RangeDataInserterOptions range_data_inserter_options</dt>
+<dd>Not yet documented.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-3d-scan-matching-proto-ceresscanmatcheroptions">
+<h2>cartographer.mapping_3d.scan_matching.proto.CeresScanMatcherOptions<a class="headerlink" href="#cartographer-mapping-3d-scan-matching-proto-ceresscanmatcheroptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>double occupied_space_weight</dt>
+<dd>Scaling parameters for each cost functor.</dd>
+<dt>double translation_weight</dt>
+<dd>Not yet documented.</dd>
+<dt>double rotation_weight</dt>
+<dd>Not yet documented.</dd>
+<dt>bool only_optimize_yaw</dt>
+<dd>Whether only to allow changes to yaw, keeping roll/pitch constant.</dd>
+<dt>cartographer.common.proto.CeresSolverOptions ceres_solver_options</dt>
+<dd>Configure the Ceres solver. See the Ceres documentation for more
+information: <a class="reference external" href="https://code.google.com/p/ceres-solver/">https://code.google.com/p/ceres-solver/</a></dd>
+</dl>
+</div>
+<div class="section" id="cartographer-mapping-3d-scan-matching-proto-fastcorrelativescanmatcheroptions">
+<h2>cartographer.mapping_3d.scan_matching.proto.FastCorrelativeScanMatcherOptions<a class="headerlink" href="#cartographer-mapping-3d-scan-matching-proto-fastcorrelativescanmatcheroptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>int32 branch_and_bound_depth</dt>
+<dd>Number of precomputed grids to use.</dd>
+<dt>int32 full_resolution_depth</dt>
+<dd>Number of full resolution grids to use, additional grids will reduce the
+resolution by half each.</dd>
+<dt>double min_rotational_score</dt>
+<dd>Minimum score for the rotational scan matcher.</dd>
+<dt>double min_low_resolution_score</dt>
+<dd>Threshold for the score of the low resolution grid below which a match is
+not considered. Only used for 3D.</dd>
+<dt>double linear_xy_search_window</dt>
+<dd>Linear search window in the plane orthogonal to gravity in which the best
+possible scan alignment will be found.</dd>
+<dt>double linear_z_search_window</dt>
+<dd>Linear search window in the gravity direction in which the best possible
+scan alignment will be found.</dd>
+<dt>double angular_search_window</dt>
+<dd>Minimum angular search window in which the best possible scan alignment
+will be found.</dd>
+</dl>
+</div>
+<div class="section" id="cartographer-sensor-proto-adaptivevoxelfilteroptions">
+<h2>cartographer.sensor.proto.AdaptiveVoxelFilterOptions<a class="headerlink" href="#cartographer-sensor-proto-adaptivevoxelfilteroptions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>float max_length</dt>
+<dd>&#8216;max_length&#8217; of a voxel edge.</dd>
+<dt>float min_num_points</dt>
+<dd>If there are more points and not at least &#8216;min_num_points&#8217; remain, the
+voxel length is reduced trying to get this minimum number of points.</dd>
+<dt>float max_range</dt>
+<dd>Points further away from the origin are removed.</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Configuration</a><ul>
+<li><a class="reference internal" href="#cartographer-common-proto-ceressolveroptions">cartographer.common.proto.CeresSolverOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-pose-graph-proto-constraintbuilderoptions">cartographer.mapping.pose_graph.proto.ConstraintBuilderOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-pose-graph-proto-optimizationproblemoptions">cartographer.mapping.pose_graph.proto.OptimizationProblemOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-proto-mapbuilderoptions">cartographer.mapping.proto.MapBuilderOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-proto-motionfilteroptions">cartographer.mapping.proto.MotionFilterOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-proto-posegraphoptions">cartographer.mapping.proto.PoseGraphOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-proto-trajectorybuilderoptions">cartographer.mapping.proto.TrajectoryBuilderOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-2d-proto-localtrajectorybuilderoptions">cartographer.mapping_2d.proto.LocalTrajectoryBuilderOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-2d-proto-rangedatainserteroptions">cartographer.mapping_2d.proto.RangeDataInserterOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-2d-proto-submapsoptions">cartographer.mapping_2d.proto.SubmapsOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-2d-scan-matching-proto-ceresscanmatcheroptions">cartographer.mapping_2d.scan_matching.proto.CeresScanMatcherOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-2d-scan-matching-proto-fastcorrelativescanmatcheroptions">cartographer.mapping_2d.scan_matching.proto.FastCorrelativeScanMatcherOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-2d-scan-matching-proto-realtimecorrelativescanmatcheroptions">cartographer.mapping_2d.scan_matching.proto.RealTimeCorrelativeScanMatcherOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-3d-proto-localtrajectorybuilderoptions">cartographer.mapping_3d.proto.LocalTrajectoryBuilderOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-3d-proto-rangedatainserteroptions">cartographer.mapping_3d.proto.RangeDataInserterOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-3d-proto-submapsoptions">cartographer.mapping_3d.proto.SubmapsOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-3d-scan-matching-proto-ceresscanmatcheroptions">cartographer.mapping_3d.scan_matching.proto.CeresScanMatcherOptions</a></li>
+<li><a class="reference internal" href="#cartographer-mapping-3d-scan-matching-proto-fastcorrelativescanmatcheroptions">cartographer.mapping_3d.scan_matching.proto.FastCorrelativeScanMatcherOptions</a></li>
+<li><a class="reference internal" href="#cartographer-sensor-proto-adaptivevoxelfilteroptions">cartographer.sensor.proto.AdaptiveVoxelFilterOptions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Cartographer</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="evaluation.html"
+                        title="next chapter">Evaluation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/configuration.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="evaluation.html" title="Evaluation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Cartographer"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Cartographer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016 The Cartographer Authors.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

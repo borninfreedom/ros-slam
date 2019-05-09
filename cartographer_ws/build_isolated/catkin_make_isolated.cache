@@ -1,0 +1,2 @@
+cartographer:cartographer_ros/cartographer_ros:cartographer_ros/cartographer_ros_msgs:cartographer_ros/cartographer_rviz:ceres-solver
+-G Ninja -DCATKIN_DEVEL_PREFIX=/home/nvidia/git/repos/ros/cartographer_ws/devel_isolated -DCMAKE_INSTALL_PREFIX=/home/nvidia/git/repos/ros/cartographer_ws/install_isolated

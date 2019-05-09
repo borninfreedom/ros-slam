@@ -1,0 +1,96 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/nvidia/git/repos/ros/cartographer_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_dfdb1"
+[1/2] Building C object CMakeFiles/cmTC_dfdb1.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_dfdb1
+FAILED: : && /usr/bin/cc     CMakeFiles/cmTC_dfdb1.dir/CheckSymbolExists.c.o  -o cmTC_dfdb1  -rdynamic && :
+CMakeFiles/cmTC_dfdb1.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x14)：对‘pthread_create’未定义的引用
+CheckSymbolExists.c:(.text+0x18)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+File /home/nvidia/git/repos/ros/cartographer_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/nvidia/git/repos/ros/cartographer_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_2e8df"
+[1/2] Building C object CMakeFiles/cmTC_2e8df.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_2e8df
+FAILED: : && /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create   CMakeFiles/cmTC_2e8df.dir/CheckFunctionExists.c.o  -o cmTC_2e8df  -rdynamic -lpthreads && :
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+Determining if the include file unordered_map exists failed with the following output:
+Change Dir: /home/nvidia/git/repos/ros/cartographer_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_33359"
+[1/2] Building CXX object CMakeFiles/cmTC_33359.dir/CheckIncludeFile.cxx.o
+FAILED: /usr/bin/c++     -fopenmp  -fopenmp -o CMakeFiles/cmTC_33359.dir/CheckIncludeFile.cxx.o -c CheckIncludeFile.cxx
+In file included from /usr/include/c++/5/unordered_map:35:0,
+                 from CheckIncludeFile.cxx:1:
+/usr/include/c++/5/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support \
+  ^
+ninja: build stopped: subcommand failed.
+
+
+Performing C++ SOURCE FILE Test HAVE_SHARED_PTR_IN_STD_NAMESPACE failed with the following output:
+Change Dir: /home/nvidia/git/repos/ros/cartographer_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_1b836"
+[1/2] Building CXX object CMakeFiles/cmTC_1b836.dir/src.cxx.o
+FAILED: /usr/bin/c++     -fopenmp -DHAVE_SHARED_PTR_IN_STD_NAMESPACE  -fopenmp -o CMakeFiles/cmTC_1b836.dir/src.cxx.o -c src.cxx
+src.cxx: In function ‘int main()’:
+src.cxx:3:34: error: ‘shared_ptr’ is not a member of ‘std’
+                                  std::shared_ptr<int> int_ptr;
+                                  ^
+src.cxx:3:50: error: expected primary-expression before ‘int’
+                                  std::shared_ptr<int> int_ptr;
+                                                  ^
+ninja: build stopped: subcommand failed.
+
+Source file was:
+#include <memory>
+                               int main() {
+                                 std::shared_ptr<int> int_ptr;
+                                 return 0;
+                               }
+Performing C++ SOURCE FILE Test HAVE_SHARED_PTR_IN_TR1_NAMESPACE failed with the following output:
+Change Dir: /home/nvidia/git/repos/ros/cartographer_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_e0248"
+[1/2] Building CXX object CMakeFiles/cmTC_e0248.dir/src.cxx.o
+FAILED: /usr/bin/c++     -fopenmp -DHAVE_SHARED_PTR_IN_TR1_NAMESPACE  -fopenmp -o CMakeFiles/cmTC_e0248.dir/src.cxx.o -c src.cxx
+src.cxx: In function ‘int main()’:
+src.cxx:3:41: error: ‘std::tr1’ has not been declared
+                                    std::tr1::shared_ptr<int> int_ptr;
+                                         ^
+src.cxx:3:57: error: expected primary-expression before ‘int’
+                                    std::tr1::shared_ptr<int> int_ptr;
+                                                         ^
+ninja: build stopped: subcommand failed.
+
+Source file was:
+#include <memory>
+                                 int main() {
+                                   std::tr1::shared_ptr<int> int_ptr;
+                                   return 0;
+                                 }

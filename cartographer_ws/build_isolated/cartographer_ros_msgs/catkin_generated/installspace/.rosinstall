@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/nvidia/git/repos/ros/cartographer_ws/install_isolated/setup.sh

@@ -1,5 +1,20 @@
 <launch>
+	<include file = "$(find delta_lidar)/launch/delta_lidar.launch" />
    <node name="arduino" pkg="ros_arduino_python" type="arduino_node.py" output="screen">
       <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
    </node>
+
+	<arg name="tf_map_scanmatch_transform_frame_name" default="/odom_laser"/>
+  <arg name="pub_map_odom_transform" value="true"/> 
+  <arg name="map_frame" value="map"/> 
+  <arg name="base_frame" value="base_link"/> 
+  <arg name="odom_frame" value="odom"/>
+  <arg name="scan_subscriber_queue_size" default="5"/>
+  <arg name="scan_topic" default="scan"/>
+  <arg name="map_size" default="1024"/>
+
+   <master auto="start"/>
+
+ <node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser" args="-0.025 0.02 0.095 0 0 0 /$(arg base_frame) /laser 100"/>  
+
 </launch>

@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Cartographer &mdash; Cartographer 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Cartographer 1.0.0 documentation" href="#" />
+    <link rel="next" title="Configuration" href="configuration.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuration"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Cartographer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cartographer">
+<h1>Cartographer<a class="headerlink" href="#cartographer" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p><a class="reference external" href="https://github.com/googlecartographer/cartographer">Cartographer</a> is a system that provides real-time simultaneous localization
+and mapping (<a class="reference external" href="https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping">SLAM</a>) in 2D and 3D across multiple platforms and sensor
+configurations.</p>
+<div class="section" id="technical-overview">
+<h2>Technical Overview<a class="headerlink" href="#technical-overview" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>High level system overview of Cartographer</li>
+</ul>
+<a class="reference external image-reference" href="https://github.com/googlecartographer/cartographer/blob/master/docs/source/high_level_system_overview.png"><img alt="_images/high_level_system_overview.png" src="_images/high_level_system_overview.png" /></a>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>Cartographer is a standalone C++ library. To get started quickly, use our <a class="reference external" href="http://www.ros.org">ROS</a> integration.</p>
+<div class="section" id="getting-started-with-ros">
+<h3>Getting started with ROS<a class="headerlink" href="#getting-started-with-ros" title="Permalink to this headline">¶</a></h3>
+<p>ROS integration is provided by the <a class="reference external" href="https://github.com/googlecartographer/cartographer_ros">Cartographer ROS repository</a>. You will find
+complete documentation for using Cartographer with ROS at the
+<a class="reference external" href="https://google-cartographer-ros.readthedocs.io">Cartographer ROS Read the Docs site</a>.</p>
+</div>
+<div class="section" id="getting-started-without-ros">
+<h3>Getting started without ROS<a class="headerlink" href="#getting-started-without-ros" title="Permalink to this headline">¶</a></h3>
+<p>Please see our ROS integration as a starting point for integrating your system
+with the standalone library. Currently, it is the best available reference.</p>
+<p>On Ubuntu 14.04 (Trusty):</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c1"># Install the required libraries that are available as debs.</span>
+sudo apt-get update
+sudo apt-get install -y <span class="se">\</span>
+    cmake <span class="se">\</span>
+    g++ <span class="se">\</span>
+    git <span class="se">\</span>
+    google-mock <span class="se">\</span>
+    libboost-all-dev <span class="se">\</span>
+    libcairo2-dev <span class="se">\</span>
+    libeigen3-dev <span class="se">\</span>
+    libgflags-dev <span class="se">\</span>
+    libgoogle-glog-dev <span class="se">\</span>
+    liblua5.2-dev <span class="se">\</span>
+    libsuitesparse-dev <span class="se">\</span>
+    ninja-build <span class="se">\</span>
+    python-sphinx
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">VERSION</span><span class="o">=</span><span class="s2">&quot;1.13.0&quot;</span>
+
+<span class="c1"># Build and install Ceres.</span>
+git clone https://ceres-solver.googlesource.com/ceres-solver
+<span class="nb">cd</span> ceres-solver
+git checkout tags/<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>
+mkdir build
+<span class="nb">cd</span> build
+cmake .. -G Ninja -DCXX11<span class="o">=</span>ON
+ninja
+<span class="nv">CTEST_OUTPUT_ON_FAILURE</span><span class="o">=</span><span class="m">1</span> ninja <span class="nb">test</span>
+sudo ninja install
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">VERSION</span><span class="o">=</span><span class="s2">&quot;v3.4.1&quot;</span>
+
+<span class="c1"># Build and install proto3.</span>
+git clone https://github.com/google/protobuf.git
+<span class="nb">cd</span> protobuf
+git checkout tags/<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>
+mkdir build
+<span class="nb">cd</span> build
+cmake -G Ninja <span class="se">\</span>
+  -DCMAKE_POSITION_INDEPENDENT_CODE<span class="o">=</span>ON <span class="se">\</span>
+  -DCMAKE_BUILD_TYPE<span class="o">=</span>Release <span class="se">\</span>
+  -Dprotobuf_BUILD_TESTS<span class="o">=</span>OFF <span class="se">\</span>
+  ../cmake
+ninja
+sudo ninja install
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c1"># Build and install Cartographer.</span>
+<span class="nb">cd</span> cartographer
+mkdir build
+<span class="nb">cd</span> build
+cmake .. -G Ninja
+ninja
+<span class="nv">CTEST_OUTPUT_ON_FAILURE</span><span class="o">=</span><span class="m">1</span> ninja <span class="nb">test</span>
+sudo ninja install
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="system-requirements">
+<span id="id2"></span><h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<p>Although Cartographer may run on other systems, it is confirmed to be working
+on systems that meet the following requirements:</p>
+<ul class="simple">
+<li>64-bit, modern CPU (e.g. 3rd generation i7)</li>
+<li>16 GB RAM</li>
+<li>Ubuntu 14.04 (Trusty) and 16.04 (Xenial)</li>
+<li>gcc version 4.8.4 and 5.4.0</li>
+</ul>
+<div class="section" id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>32-bit builds have libeigen alignment problems which cause crashes and/or
+memory corruptions.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="how-to-cite-us">
+<h2>How to cite us<a class="headerlink" href="#how-to-cite-us" title="Permalink to this headline">¶</a></h2>
+<p>Background about the algorithms developed for Cartographer can be found in the
+following publication. If you use Cartographer for your research, we would
+appreciate it if you cite our paper.</p>
+<p>W. Hess, D. Kohler, H. Rapp, and D. Andor,
+<a class="reference external" href="https://research.google.com/pubs/pub45466.html">Real-Time Loop Closure in 2D LIDAR SLAM</a>, in
+<em>Robotics and Automation (ICRA), 2016 IEEE International Conference on</em>.
+IEEE, 2016. pp. 1271–1278.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Cartographer</a><ul>
+<li><a class="reference internal" href="#technical-overview">Technical Overview</a></li>
+<li><a class="reference internal" href="#getting-started">Getting started</a><ul>
+<li><a class="reference internal" href="#getting-started-with-ros">Getting started with ROS</a></li>
+<li><a class="reference internal" href="#getting-started-without-ros">Getting started without ROS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#system-requirements">System Requirements</a><ul>
+<li><a class="reference internal" href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-to-cite-us">How to cite us</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="configuration.html"
+                        title="next chapter">Configuration</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuration"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Cartographer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016 The Cartographer Authors.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>
