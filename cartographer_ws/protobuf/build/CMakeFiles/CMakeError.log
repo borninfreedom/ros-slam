@@ -1,0 +1,40 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/nvidia/git/repos/ros/cartographer_ws/protobuf/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_30a27"
+[1/2] Building C object CMakeFiles/cmTC_30a27.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_30a27
+FAILED: : && /usr/bin/cc     CMakeFiles/cmTC_30a27.dir/CheckSymbolExists.c.o  -o cmTC_30a27  -rdynamic && :
+CMakeFiles/cmTC_30a27.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x14)：对‘pthread_create’未定义的引用
+CheckSymbolExists.c:(.text+0x18)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+File /home/nvidia/git/repos/ros/cartographer_ws/protobuf/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/nvidia/git/repos/ros/cartographer_ws/protobuf/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_446ce"
+[1/2] Building C object CMakeFiles/cmTC_446ce.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_446ce
+FAILED: : && /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create   CMakeFiles/cmTC_446ce.dir/CheckFunctionExists.c.o  -o cmTC_446ce  -rdynamic -lpthreads && :
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
