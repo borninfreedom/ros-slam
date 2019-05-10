@@ -20,10 +20,10 @@ options = {
   trajectory_builder = TRAJECTORY_BUILDER,
   map_frame = "map",
   tracking_frame = "base_link",
-  published_frame = "odom",
+  published_frame = "base_link",
   odom_frame = "odom",
-  provide_odom_frame = true,
-  publish_frame_projected_to_2d = true,
+  provide_odom_frame = false,
+  publish_frame_projected_to_2d = false,
   use_odometry = true,
   use_nav_sat = false,
   use_landmarks = false,
@@ -43,6 +43,14 @@ options = {
 }
 
 MAP_BUILDER.use_trajectory_builder_2d = true
-TRAJECTORY_BUILDER_2D.num_accumulated_range_data = 100
-
+TRAJECTORY_BUILDER_2D.num_accumulated_range_data = 10
+TRAJECTORY_BUILDER_2D.min_range = 0.20
+TRAJECTORY_BUILDER_2D.max_range = 16.0
+TRAJECTORY_BUILDER_2D.submaps.num_range_data = 50
+TRAJECTORY_BUILDER_2D.use_imu_data = false
+TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = false
+POSE_GRAPH.constraint_builder.max_constraint_distance = 4
+TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 10
+TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = 40
+POSE_GRAPH.optimization_problem.odometry_rotation_weight = 0
 return options
