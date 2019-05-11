@@ -127,6 +127,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/nvidia/git/repos/ros/catkin_ws/build/delta_lidar/cmake_install.cmake")
   include("/home/nvidia/git/repos/ros/catkin_ws/build/imu_tools/imu_complementary_filter/cmake_install.cmake")
   include("/home/nvidia/git/repos/ros/catkin_ws/build/imu_tools/imu_filter_madgwick/cmake_install.cmake")
+  include("/home/nvidia/git/repos/ros/catkin_ws/build/jetsonbot_description/cmake_install.cmake")
   include("/home/nvidia/git/repos/ros/catkin_ws/build/imu_tools/rviz_imu_plugin/cmake_install.cmake")
 
 endif()

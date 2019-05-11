@@ -1,0 +1,186 @@
+<robot name="jetsonbot">
+	<link name="base_link">
+		<visual>
+			<geometry>
+				<box size="0.22 0.18 0.005"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="-0.055 0  0.05"/>
+			<material name="">
+				<color rgba="0.1 0.1 0.1 1"/>
+			</material>
+		</visual>
+	</link>
+
+    <link name="top_link">
+        <visual>
+            <geometry>
+                <box size="0.22 0.18 0.005"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+    </link>
+
+
+    <link name="lidar_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.04" radius="0.035"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.5 0.5 0.5 1"/>
+            </material>
+        </visual>
+    </link>
+
+
+	<link name="right_wheel">
+		<visual>
+			<geometry>
+				<cylinder length=".025" radius=".034"/>
+			</geometry>
+			<material name="blue">
+				<color rgba="0 0 .8 1"/>
+			</material>
+		</visual>
+	</link>
+
+	<link name="left_wheel">
+        <visual>
+            <geometry>
+                <cylinder length=".025" radius=".034"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0 0 .8 1"/>
+            </material>
+        </visual>
+    </link>
+
+
+    <link name="back_wheel">
+        <visual>
+            <geometry>
+                <cylinder length=".025" radius=".034"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0 0 .8 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="support_right_front">
+        <visual>
+            <geometry>
+                <cylinder length="0.11" radius="0.0023"/>
+            </geometry>
+            <material name="red">
+				<color rgba="0.8 0 0 1"/>
+			</material>
+        </visual>
+    </link>
+
+    <link name="support_right_back">
+        <visual>
+            <geometry>
+                <cylinder length="0.11" radius="0.0023"/>
+            </geometry>
+            <material name="red">
+                <color rgba="0.8 0 0 1"/>
+            </material>
+        </visual>
+    </link>
+
+
+    <link name="support_left_front">
+        <visual>
+            <geometry>
+                <cylinder length="0.11" radius="0.0023"/>
+            </geometry>
+            <material name="red">
+                <color rgba="0.8 0 0 1"/>
+            </material>
+        </visual>
+    </link>
+
+
+    <link name="support_left_back">
+        <visual>
+            <geometry>
+                <cylinder length="0.11" radius="0.0023"/>
+            </geometry>
+            <material name="red">
+                <color rgba="0.8 0 0 1"/>
+            </material>
+        </visual>
+    </link>
+
+
+
+    <joint name="left_wheel_base_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="left_wheel"/>
+        <origin rpy="1.57075 0 0" xyz="0 0.0775 0.034"/>
+        <limit effort="100" velocity="100"/>
+        <joint_properties damping="0.0" friction="0.0"/>
+    </joint>
+
+
+	<joint name="right_wheel_base_joint" type="continuous">
+		<parent link="base_link"/>
+		<child link="right_wheel"/>
+		<origin rpy="1.57075 0 0" xyz="0 -0.0775 0.034"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping="0.0" friction="0.0"/>
+	</joint>
+		
+
+    <joint name="back_wheel_base_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="back_wheel"/>
+        <origin rpy="1.57075 0 0" xyz="-0.12 0 0.034"/>
+        <limit effort="100" velocity="100"/>
+        <joint_properties damping="0.0" friction="0.0"/>
+    </joint>
+
+    <joint name="support_right_front_base_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="support_right_front"/>
+        <origin rpy="0 0 0" xyz="0.04 -0.07 0.1"/>
+    </joint>
+
+    <joint name="support_right_back_base_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="support_right_back"/>
+        <origin rpy="0 0 0" xyz="-0.15 -0.07 0.1"/>
+    </joint>
+
+    <joint name="support_left_front_base_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="support_left_front"/>
+        <origin rpy="0 0 0" xyz="0.04 0.07 0.1"/>
+    </joint>
+
+    <joint name="support_left_back_base_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="support_left_back"/>
+        <origin rpy="0 0 0" xyz="-0.15 0.07 0.1"/>
+    </joint>
+
+
+    <joint name="top_base_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="top_link"/>
+        <origin rpy="0 0 0" xyz="-0.055 0  0.15"/>
+    </joint>
+
+
+
+    <joint name="lidar_base_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="lidar_link"/>
+        <origin rpy="0 0 0" xyz="0  0  0.17"/>
+    </joint>
+
+
+</robot>

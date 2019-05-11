@@ -4013,6 +4013,24 @@ clean: imu_tools/imu_filter_madgwick/CMakeFiles/run_tests_imu_filter_madgwick.di
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory jetsonbot_description
+
+# Convenience name for "all" pass in the directory.
+jetsonbot_description/all:
+
+.PHONY : jetsonbot_description/all
+
+# Convenience name for "clean" pass in the directory.
+jetsonbot_description/clean:
+
+.PHONY : jetsonbot_description/clean
+
+# Convenience name for "preinstall" pass in the directory.
+jetsonbot_description/preinstall:
+
+.PHONY : jetsonbot_description/preinstall
+
+#=============================================================================
 # Directory level rules for directory imu_tools/rviz_imu_plugin
 
 # Convenience name for "all" pass in the directory.

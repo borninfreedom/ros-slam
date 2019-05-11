@@ -22,6 +22,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "imu_tools/imu_tools/catkin_generated/package.cmake"
   "imu_tools/rviz_imu_plugin/catkin_generated/ordered_paths.cmake"
   "imu_tools/rviz_imu_plugin/catkin_generated/package.cmake"
+  "jetsonbot_description/catkin_generated/ordered_paths.cmake"
+  "jetsonbot_description/catkin_generated/package.cmake"
   "jetsonbot_nav/catkin_generated/ordered_paths.cmake"
   "jetsonbot_nav/catkin_generated/package.cmake"
   "ros_arduino_bridge/ros_arduino_bridge/catkin_generated/package.cmake"
@@ -46,6 +48,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/nvidia/git/repos/ros/catkin_ws/src/imu_tools/imu_tools/package.xml"
   "/home/nvidia/git/repos/ros/catkin_ws/src/imu_tools/rviz_imu_plugin/CMakeLists.txt"
   "/home/nvidia/git/repos/ros/catkin_ws/src/imu_tools/rviz_imu_plugin/package.xml"
+  "/home/nvidia/git/repos/ros/catkin_ws/src/jetsonbot_description/CMakeLists.txt"
+  "/home/nvidia/git/repos/ros/catkin_ws/src/jetsonbot_description/package.xml"
   "/home/nvidia/git/repos/ros/catkin_ws/src/jetsonbot_nav/CMakeLists.txt"
   "/home/nvidia/git/repos/ros/catkin_ws/src/jetsonbot_nav/package.xml"
   "/home/nvidia/git/repos/ros/catkin_ws/src/ros_arduino_bridge/ros_arduino_bridge/CMakeLists.txt"
@@ -339,6 +343,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "delta_lidar/CMakeFiles/CMakeDirectoryInformation.cmake"
   "imu_tools/imu_complementary_filter/CMakeFiles/CMakeDirectoryInformation.cmake"
   "imu_tools/imu_filter_madgwick/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "jetsonbot_description/CMakeFiles/CMakeDirectoryInformation.cmake"
   "imu_tools/rviz_imu_plugin/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

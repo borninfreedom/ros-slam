@@ -21,7 +21,7 @@ wheel_diameter: 0.062
 wheel_track: 0.1925
 encoder_resolution: 19
 gear_reduction: 45.0
-motors_reversed: False
+motors_reversed: True
 
 # === PID parameters
 Kp: 20
@@ -29,7 +29,7 @@ Kd: 12
 Ki: 0
 Ko: 50
 accel_limit: 1.0
-left_Kp: 28
+left_Kp: 20
 left_Kd: 12
 left_Ki: 0
 left_Ko: 50

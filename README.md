@@ -1,6 +1,9 @@
+# URDF相关参数参考
+* https://blog.csdn.net/datase/article/details/78937803
 # Human-posture-detection
 通过kinect V1检测人体的姿势
-
+# ubuntu 修改默认终端程序
+* https://www.cnblogs.com/NCCM/p/4857010.html
 在ros下使用kinect V1摄像头的注意事项
 ---
 * 当安装ros时如果选择的是`desktop-full`版本，即完整桌面版安装的话，ros已经集成了kinect的驱动，在`/opt/ros/kinetic/lib/freenect_camera`文件夹下已经有`freenect_node`，所以先启动`roscore`，在终端直接输入`rosrun freenect_camera freenect_node`即可打开摄像头。启动`rosrun rviz rviz,add "images"`,选择好`topic`后即可看到图像。
