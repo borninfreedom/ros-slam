@@ -1,0 +1,20 @@
+\subsubsection usage Usage
+\verbatim
+<node name="move_base_node" pkg="move_base" type="move_base_node">
+  <param name="base_global_planner" type="str" value="navfn/NavfnROS" />
+  <param name="base_local_planner" type="str" value="base_local_planner/TrajectoryPlannerROS" />
+  <param name="planner_frequency" type="double" value="0.0" />
+  <param name="controller_frequency" type="double" value="20.0" />
+  <param name="planner_patience" type="double" value="5.0" />
+  <param name="controller_patience" type="double" value="5.0" />
+  <param name="max_planning_retries" type="int" value="-1" />
+  <param name="conservative_reset_dist" type="double" value="3.0" />
+  <param name="recovery_behavior_enabled" type="bool" value="True" />
+  <param name="clearing_rotation_allowed" type="bool" value="True" />
+  <param name="shutdown_costmaps" type="bool" value="False" />
+  <param name="oscillation_timeout" type="double" value="0.0" />
+  <param name="oscillation_distance" type="double" value="0.5" />
+  <param name="restore_defaults" type="bool" value="False" />
+</node>
+\endverbatim
+

@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/catkin_ws/install
+
+Name: teb_local_planner
+Description: Description of teb_local_planner
+Version: 0.6.11
+Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/install/include -I/usr/include/suitesparse -I/opt/ros/kinetic/include/g2o
+Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib -lteb_local_planner -lamd -lbtf -lcamd -lccolamd -lcholmod -lcolamd -lcxsparse -lklu -lumfpack -lspqr /opt/ros/kinetic/lib/libg2o_csparse_extension.so /opt/ros/kinetic/lib/libg2o_core.so /opt/ros/kinetic/lib/libg2o_stuff.so /opt/ros/kinetic/lib/libg2o_types_slam2d.so /opt/ros/kinetic/lib/libg2o_types_slam3d.so /opt/ros/kinetic/lib/libg2o_solver_cholmod.so /opt/ros/kinetic/lib/libg2o_solver_pcg.so /opt/ros/kinetic/lib/libg2o_solver_csparse.so /opt/ros/kinetic/lib/libg2o_incremental.so
+Requires: base_local_planner costmap_2d costmap_converter dynamic_reconfigure geometry_msgs interactive_markers message_runtime nav_core nav_msgs pluginlib roscpp std_msgs tf tf_conversions visualization_msgs

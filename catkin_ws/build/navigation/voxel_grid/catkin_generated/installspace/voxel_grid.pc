@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/catkin_ws/install
+
+Name: voxel_grid
+Description: Description of voxel_grid
+Version: 1.14.4
+Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/install/include
+Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib -lvoxel_grid
+Requires: roscpp

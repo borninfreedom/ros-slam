@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/catkin_ws/devel
+
+Name: fake_localization
+Description: Description of fake_localization
+Version: 1.14.4
+Cflags: 
+Libs: -L/home/nvidia/git/repos/ros/catkin_ws/devel/lib 
+Requires: geometry_msgs nav_msgs roscpp rospy

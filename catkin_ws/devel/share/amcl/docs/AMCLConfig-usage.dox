@@ -1,0 +1,45 @@
+\subsubsection usage Usage
+\verbatim
+<node name="amcl_node" pkg="amcl" type="amcl_node">
+  <param name="min_particles" type="int" value="100" />
+  <param name="max_particles" type="int" value="5000" />
+  <param name="kld_err" type="double" value="0.01" />
+  <param name="kld_z" type="double" value="0.99" />
+  <param name="update_min_d" type="double" value="0.2" />
+  <param name="update_min_a" type="double" value="0.523598775598" />
+  <param name="resample_interval" type="int" value="2" />
+  <param name="transform_tolerance" type="double" value="0.1" />
+  <param name="recovery_alpha_slow" type="double" value="0.0" />
+  <param name="recovery_alpha_fast" type="double" value="0.0" />
+  <param name="do_beamskip" type="bool" value="False" />
+  <param name="beam_skip_distance" type="double" value="0.5" />
+  <param name="beam_skip_threshold" type="double" value="0.3" />
+  <param name="tf_broadcast" type="bool" value="True" />
+  <param name="gui_publish_rate" type="double" value="-1.0" />
+  <param name="save_pose_rate" type="double" value="0.5" />
+  <param name="use_map_topic" type="bool" value="False" />
+  <param name="first_map_only" type="bool" value="False" />
+  <param name="laser_min_range" type="double" value="-1.0" />
+  <param name="laser_max_range" type="double" value="-1.0" />
+  <param name="laser_max_beams" type="int" value="30" />
+  <param name="laser_z_hit" type="double" value="0.95" />
+  <param name="laser_z_short" type="double" value="0.1" />
+  <param name="laser_z_max" type="double" value="0.05" />
+  <param name="laser_z_rand" type="double" value="0.05" />
+  <param name="laser_sigma_hit" type="double" value="0.2" />
+  <param name="laser_lambda_short" type="double" value="0.1" />
+  <param name="laser_likelihood_max_dist" type="double" value="2.0" />
+  <param name="laser_model_type" type="str" value="likelihood_field" />
+  <param name="odom_model_type" type="str" value="diff" />
+  <param name="odom_alpha1" type="double" value="0.2" />
+  <param name="odom_alpha2" type="double" value="0.2" />
+  <param name="odom_alpha3" type="double" value="0.2" />
+  <param name="odom_alpha4" type="double" value="0.2" />
+  <param name="odom_alpha5" type="double" value="0.2" />
+  <param name="odom_frame_id" type="str" value="odom" />
+  <param name="base_frame_id" type="str" value="base_link" />
+  <param name="global_frame_id" type="str" value="map" />
+  <param name="restore_defaults" type="bool" value="False" />
+</node>
+\endverbatim
+

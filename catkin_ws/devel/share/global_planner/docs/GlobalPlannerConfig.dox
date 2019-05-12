@@ -1,0 +1,11 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~lethal_cost" : \b [int] Lethal Cost min: 1, default: 253, max: 255
+- \b "~neutral_cost" : \b [int] Neutral Cost min: 1, default: 50, max: 255
+- \b "~cost_factor" : \b [double] Factor to multiply each cost from costmap by min: 0.01, default: 3.0, max: 5.0
+- \b "~publish_potential" : \b [bool] Publish Potential Costmap min: False, default: True, max: True
+- \b "~orientation_mode" : \b [int] How to set the orientation of each point min: 0, default: 1, max: 6
+- \b "~orientation_window_size" : \b [int] What window to use to determine the orientation based on the position derivative specified by the orientation mode min: 1, default: 1, max: 255
+

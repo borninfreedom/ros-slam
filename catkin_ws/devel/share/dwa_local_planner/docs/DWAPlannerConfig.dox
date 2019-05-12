@@ -1,0 +1,40 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~max_trans_vel" : \b [double] The absolute value of the maximum translational velocity for the robot in m/s min: 0.0, default: 0.55, max: std::numeric_limits<double>::infinity()
+- \b "~min_trans_vel" : \b [double] The absolute value of the minimum translational velocity for the robot in m/s min: 0.0, default: 0.1, max: std::numeric_limits<double>::infinity()
+- \b "~max_vel_x" : \b [double] The maximum x velocity for the robot in m/s min: -std::numeric_limits<double>::infinity(), default: 0.55, max: std::numeric_limits<double>::infinity()
+- \b "~min_vel_x" : \b [double] The minimum x velocity for the robot in m/s min: -std::numeric_limits<double>::infinity(), default: 0.0, max: std::numeric_limits<double>::infinity()
+- \b "~max_vel_y" : \b [double] The maximum y velocity for the robot in m/s min: -std::numeric_limits<double>::infinity(), default: 0.1, max: std::numeric_limits<double>::infinity()
+- \b "~min_vel_y" : \b [double] The minimum y velocity for the robot in m/s min: -std::numeric_limits<double>::infinity(), default: -0.1, max: std::numeric_limits<double>::infinity()
+- \b "~max_rot_vel" : \b [double] The absolute value of the maximum rotational velocity for the robot in rad/s min: 0.0, default: 1.0, max: std::numeric_limits<double>::infinity()
+- \b "~min_rot_vel" : \b [double] The absolute value of the minimum rotational velocity for the robot in rad/s min: 0.0, default: 0.4, max: std::numeric_limits<double>::infinity()
+- \b "~acc_lim_x" : \b [double] The acceleration limit of the robot in the x direction min: 0.0, default: 2.5, max: 20.0
+- \b "~acc_lim_y" : \b [double] The acceleration limit of the robot in the y direction min: 0.0, default: 2.5, max: 20.0
+- \b "~acc_lim_theta" : \b [double] The acceleration limit of the robot in the theta direction min: 0.0, default: 3.2, max: 20.0
+- \b "~acc_limit_trans" : \b [double] The absolute value of the maximum translational acceleration for the robot in m/s^2 min: 0.0, default: 0.1, max: std::numeric_limits<double>::infinity()
+- \b "~prune_plan" : \b [bool] Start following closest point of global plan, not first point (if different). min: False, default: False, max: True
+- \b "~xy_goal_tolerance" : \b [double] Within what maximum distance we consider the robot to be in goal min: -std::numeric_limits<double>::infinity(), default: 0.1, max: std::numeric_limits<double>::infinity()
+- \b "~yaw_goal_tolerance" : \b [double] Within what maximum angle difference we consider the robot to face goal direction min: -std::numeric_limits<double>::infinity(), default: 0.1, max: std::numeric_limits<double>::infinity()
+- \b "~trans_stopped_vel" : \b [double] Below what maximum velocity we consider the robot to be stopped in translation min: -std::numeric_limits<double>::infinity(), default: 0.1, max: std::numeric_limits<double>::infinity()
+- \b "~rot_stopped_vel" : \b [double] Below what maximum rotation velocity we consider the robot to be stopped in rotation min: -std::numeric_limits<double>::infinity(), default: 0.1, max: std::numeric_limits<double>::infinity()
+- \b "~sim_time" : \b [double] The amount of time to roll trajectories out for in seconds min: 0.0, default: 1.7, max: std::numeric_limits<double>::infinity()
+- \b "~sim_granularity" : \b [double] The granularity with which to check for collisions along each trajectory in meters min: 0.0, default: 0.025, max: std::numeric_limits<double>::infinity()
+- \b "~angular_sim_granularity" : \b [double] The granularity with which to check for collisions for rotations in radians min: 0.0, default: 0.1, max: std::numeric_limits<double>::infinity()
+- \b "~path_distance_bias" : \b [double] The weight for the path distance part of the cost function min: 0.0, default: 32.0, max: std::numeric_limits<double>::infinity()
+- \b "~goal_distance_bias" : \b [double] The weight for the goal distance part of the cost function min: 0.0, default: 24.0, max: std::numeric_limits<double>::infinity()
+- \b "~occdist_scale" : \b [double] The weight for the obstacle distance part of the cost function min: 0.0, default: 0.01, max: std::numeric_limits<double>::infinity()
+- \b "~twirling_scale" : \b [double] The weight for penalizing any changes in robot heading min: 0.0, default: 0.0, max: std::numeric_limits<double>::infinity()
+- \b "~stop_time_buffer" : \b [double] The amount of time that the robot must stop before a collision in order for a trajectory to be considered valid in seconds min: 0.0, default: 0.2, max: std::numeric_limits<double>::infinity()
+- \b "~oscillation_reset_dist" : \b [double] The distance the robot must travel before oscillation flags are reset, in meters min: 0.0, default: 0.05, max: std::numeric_limits<double>::infinity()
+- \b "~oscillation_reset_angle" : \b [double] The angle the robot must turn before oscillation flags are reset, in radians min: 0.0, default: 0.2, max: std::numeric_limits<double>::infinity()
+- \b "~forward_point_distance" : \b [double] The distance from the center point of the robot to place an additional scoring point, in meters min: -std::numeric_limits<double>::infinity(), default: 0.325, max: std::numeric_limits<double>::infinity()
+- \b "~scaling_speed" : \b [double] The absolute value of the velocity at which to start scaling the robot's footprint, in m/s min: 0.0, default: 0.25, max: std::numeric_limits<double>::infinity()
+- \b "~max_scaling_factor" : \b [double] The maximum factor to scale the robot's footprint by min: 0.0, default: 0.2, max: std::numeric_limits<double>::infinity()
+- \b "~vx_samples" : \b [int] The number of samples to use when exploring the x velocity space min: 1, default: 3, max: 2147483647
+- \b "~vy_samples" : \b [int] The number of samples to use when exploring the y velocity space min: 1, default: 10, max: 2147483647
+- \b "~vth_samples" : \b [int] The number of samples to use when exploring the theta velocity space min: 1, default: 20, max: 2147483647
+- \b "~use_dwa" : \b [bool] Use dynamic window approach to constrain sampling velocities to small window. min: False, default: True, max: True
+- \b "~restore_defaults" : \b [bool] Restore to the original configuration. min: False, default: False, max: True
+

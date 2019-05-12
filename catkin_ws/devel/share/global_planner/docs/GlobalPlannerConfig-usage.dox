@@ -1,0 +1,12 @@
+\subsubsection usage Usage
+\verbatim
+<node name="global_planner" pkg="global_planner" type="global_planner">
+  <param name="lethal_cost" type="int" value="253" />
+  <param name="neutral_cost" type="int" value="50" />
+  <param name="cost_factor" type="double" value="3.0" />
+  <param name="publish_potential" type="bool" value="True" />
+  <param name="orientation_mode" type="int" value="1" />
+  <param name="orientation_window_size" type="int" value="1" />
+</node>
+\endverbatim
+

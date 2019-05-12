@@ -1,0 +1,44 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~min_particles" : \b [int] Minimum allowed number of particles. min: 0, default: 100, max: 1000
+- \b "~max_particles" : \b [int] Mamimum allowed number of particles. min: 0, default: 5000, max: 10000
+- \b "~kld_err" : \b [double] Maximum error between the true distribution and the estimated distribution. min: 0.0, default: 0.01, max: 1.0
+- \b "~kld_z" : \b [double] Upper standard normal quantile for (1 - p), where p is the probability that the error on the estimated distrubition will be less than kld_err. min: 0.0, default: 0.99, max: 1.0
+- \b "~update_min_d" : \b [double] Translational movement required before performing a filter update. min: 0.0, default: 0.2, max: 5.0
+- \b "~update_min_a" : \b [double] Rotational movement required before performing a filter update. min: 0.0, default: 0.523598775598, max: 6.28318530718
+- \b "~resample_interval" : \b [int] Number of filter updates required before resampling. min: 0, default: 2, max: 20
+- \b "~transform_tolerance" : \b [double] Time with which to post-date the transform that is published, to indicate that this transform is valid into the future. min: 0.0, default: 0.1, max: 2.0
+- \b "~recovery_alpha_slow" : \b [double] Exponential decay rate for the slow average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.001. min: 0.0, default: 0.0, max: 0.5
+- \b "~recovery_alpha_fast" : \b [double] Exponential decay rate for the fast average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.1. min: 0.0, default: 0.0, max: 1.0
+- \b "~do_beamskip" : \b [bool] When true skips laser scans when a scan doesnt work for a majority of particles min: False, default: False, max: True
+- \b "~beam_skip_distance" : \b [double] Distance from a valid map point before scan is considered invalid min: 0.0, default: 0.5, max: 2.0
+- \b "~beam_skip_threshold" : \b [double] Ratio of samples for which the scans are valid to consider as valid scan min: 0.0, default: 0.3, max: 1.0
+- \b "~tf_broadcast" : \b [bool] When true (the default), publish results via TF.  When false, do not. min: False, default: True, max: True
+- \b "~gui_publish_rate" : \b [double] Maximum rate (Hz) at which scans and paths are published for visualization, -1.0 to disable. min: -1.0, default: -1.0, max: 100.0
+- \b "~save_pose_rate" : \b [double] Maximum rate (Hz) at which to store the last estimated pose and covariance to the parameter server, in the variables ~initial_pose_* and ~initial_cov_*. This saved pose will be used on subsequent runs to initialize the filter. -1.0 to disable. min: -1.0, default: 0.5, max: 10.0
+- \b "~use_map_topic" : \b [bool] When set to true, AMCL will subscribe to the map topic rather than making a service call to receive its map. min: False, default: False, max: True
+- \b "~first_map_only" : \b [bool] When set to true, AMCL will only use the first map it subscribes to, rather than updating each time a new one is received. min: False, default: False, max: True
+- \b "~laser_min_range" : \b [double] Minimum scan range to be considered; -1.0 will cause the laser's reported minimum range to be used. min: -1.0, default: -1.0, max: 1000.0
+- \b "~laser_max_range" : \b [double] Maximum scan range to be considered; -1.0 will cause the laser's reported maximum range to be used. min: -1.0, default: -1.0, max: 1000.0
+- \b "~laser_max_beams" : \b [int] How many evenly-spaced beams in each scan to be used when updating the filter. min: 0, default: 30, max: 250
+- \b "~laser_z_hit" : \b [double] Mixture weight for the z_hit part of the model. min: 0.0, default: 0.95, max: 10.0
+- \b "~laser_z_short" : \b [double] Mixture weight for the z_short part of the model. min: 0.0, default: 0.1, max: 10.0
+- \b "~laser_z_max" : \b [double] Mixture weight for the z_max part of the model. min: 0.0, default: 0.05, max: 10.0
+- \b "~laser_z_rand" : \b [double] Mixture weight for the z_rand part of the model. min: 0.0, default: 0.05, max: 10.0
+- \b "~laser_sigma_hit" : \b [double] Standard deviation for Gaussian model used in z_hit part of the model. min: 0.0, default: 0.2, max: 10.0
+- \b "~laser_lambda_short" : \b [double] Exponential decay parameter for z_short part of model. min: 0.0, default: 0.1, max: 10.0
+- \b "~laser_likelihood_max_dist" : \b [double] Maximum distance to do obstacle inflation on map, for use in likelihood_field model. min: 0.0, default: 2.0, max: 20.0
+- \b "~laser_model_type" : \b [str] Which model to use, either beam, likelihood_field or likelihood_field_prob. min: , default: likelihood_field, max: 
+- \b "~odom_model_type" : \b [str] Which model to use, diff, omni, diff-corrected, or omni-corrected min: , default: diff, max: 
+- \b "~odom_alpha1" : \b [double] Specifies the expected noise in odometry's rotation estimate from the rotational component of the robot's motion. min: 0.0, default: 0.2, max: 10.0
+- \b "~odom_alpha2" : \b [double] Specifies the expected noise in odometry's rotation estimate from the translational component of the robot's motion. min: 0.0, default: 0.2, max: 10.0
+- \b "~odom_alpha3" : \b [double] Specifies the expected noise in odometry's translation estimate from the translational component of the robot's motion. min: 0.0, default: 0.2, max: 10.0
+- \b "~odom_alpha4" : \b [double] Specifies the expected noise in odometry's translation  estimate from the rotational component of the robot's motion. min: 0.0, default: 0.2, max: 10.0
+- \b "~odom_alpha5" : \b [double] Translation-related noise parameter (only used if model is omni). min: 0.0, default: 0.2, max: 10.0
+- \b "~odom_frame_id" : \b [str] Which frame to use for odometry. min: , default: odom, max: 
+- \b "~base_frame_id" : \b [str] Which frame to use for the robot base. min: , default: base_link, max: 
+- \b "~global_frame_id" : \b [str] The name of the coordinate frame published by the localization system. min: , default: map, max: 
+- \b "~restore_defaults" : \b [bool] Retsore the default configuration min: False, default: False, max: True
+

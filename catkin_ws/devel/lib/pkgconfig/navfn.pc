@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/catkin_ws/devel
+
+Name: navfn
+Description: Description of navfn
+Version: 1.14.4
+Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/devel/include -I/home/nvidia/git/repos/ros/catkin_ws/src/navigation/navfn/include
+Libs: -L/home/nvidia/git/repos/ros/catkin_ws/devel/lib -lnavfn
+Requires: geometry_msgs message_runtime nav_core nav_msgs pluginlib roscpp visualization_msgs

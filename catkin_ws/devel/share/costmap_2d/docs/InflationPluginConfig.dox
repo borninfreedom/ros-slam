@@ -1,0 +1,9 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~enabled" : \b [bool] Whether to apply this plugin or not min: False, default: True, max: True
+- \b "~cost_scaling_factor" : \b [double] A scaling factor to apply to cost values during inflation. min: 0.0, default: 10.0, max: 100.0
+- \b "~inflation_radius" : \b [double] The radius in meters to which the map inflates obstacle cost values. min: 0.0, default: 0.55, max: 50.0
+- \b "~inflate_unknown" : \b [bool] Whether to inflate unknown cells. min: False, default: False, max: True
+

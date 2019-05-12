@@ -1,0 +1,10 @@
+\subsubsection usage Usage
+\verbatim
+<node name="costmap_2d" pkg="costmap_2d" type="costmap_2d">
+  <param name="enabled" type="bool" value="True" />
+  <param name="cost_scaling_factor" type="double" value="10.0" />
+  <param name="inflation_radius" type="double" value="0.55" />
+  <param name="inflate_unknown" type="bool" value="False" />
+</node>
+\endverbatim
+

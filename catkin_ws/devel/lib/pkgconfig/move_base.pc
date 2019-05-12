@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/catkin_ws/devel
+
+Name: move_base
+Description: Description of move_base
+Version: 1.14.4
+Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/devel/include
+Libs: -L/home/nvidia/git/repos/ros/catkin_ws/devel/lib 
+Requires: dynamic_reconfigure geometry_msgs move_base_msgs nav_msgs roscpp

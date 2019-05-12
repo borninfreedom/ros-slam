@@ -91,7 +91,7 @@ if __name__=="__main__":
     rospy.init_node('teleop_twist_keyboard')
 
     speed = rospy.get_param("~speed", 0.27)
-    turn = rospy.get_param("~turn", 0.026)
+    turn = rospy.get_param("~turn", 0.029)
     x = 0
     y = 0
     z = 0

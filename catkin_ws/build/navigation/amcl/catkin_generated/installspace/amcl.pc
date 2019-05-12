@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/catkin_ws/install
+
+Name: amcl
+Description: Description of amcl
+Version: 1.14.4
+Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/install/include
+Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib -lamcl_sensors -lamcl_map -lamcl_pf
+Requires: rosbag roscpp dynamic_reconfigure tf nav_msgs std_srvs

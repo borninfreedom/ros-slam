@@ -153,3 +153,20 @@ int main(int argc, char** argv)
 #endif
 }
 
+Determining if the include file pgm.h exists failed with the following output:
+Change Dir: /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6cc26/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6cc26.dir/build.make CMakeFiles/cmTC_6cc26.dir/build
+make[1]: Entering directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6cc26.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_6cc26.dir/CheckIncludeFile.cxx.o -c /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:17: fatal error: pgm.h: 没有那个文件或目录
+compilation terminated.
+CMakeFiles/cmTC_6cc26.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_6cc26.dir/CheckIncludeFile.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_6cc26.dir/CheckIncludeFile.cxx.o] Error 1
+make[1]: Leaving directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_6cc26/fast' failed
+make: *** [cmTC_6cc26/fast] Error 2
+
+

@@ -1,0 +1,41 @@
+\subsubsection usage Usage
+\verbatim
+<node name="dwa_local_planner" pkg="dwa_local_planner" type="dwa_local_planner">
+  <param name="max_trans_vel" type="double" value="0.55" />
+  <param name="min_trans_vel" type="double" value="0.1" />
+  <param name="max_vel_x" type="double" value="0.55" />
+  <param name="min_vel_x" type="double" value="0.0" />
+  <param name="max_vel_y" type="double" value="0.1" />
+  <param name="min_vel_y" type="double" value="-0.1" />
+  <param name="max_rot_vel" type="double" value="1.0" />
+  <param name="min_rot_vel" type="double" value="0.4" />
+  <param name="acc_lim_x" type="double" value="2.5" />
+  <param name="acc_lim_y" type="double" value="2.5" />
+  <param name="acc_lim_theta" type="double" value="3.2" />
+  <param name="acc_limit_trans" type="double" value="0.1" />
+  <param name="prune_plan" type="bool" value="False" />
+  <param name="xy_goal_tolerance" type="double" value="0.1" />
+  <param name="yaw_goal_tolerance" type="double" value="0.1" />
+  <param name="trans_stopped_vel" type="double" value="0.1" />
+  <param name="rot_stopped_vel" type="double" value="0.1" />
+  <param name="sim_time" type="double" value="1.7" />
+  <param name="sim_granularity" type="double" value="0.025" />
+  <param name="angular_sim_granularity" type="double" value="0.1" />
+  <param name="path_distance_bias" type="double" value="32.0" />
+  <param name="goal_distance_bias" type="double" value="24.0" />
+  <param name="occdist_scale" type="double" value="0.01" />
+  <param name="twirling_scale" type="double" value="0.0" />
+  <param name="stop_time_buffer" type="double" value="0.2" />
+  <param name="oscillation_reset_dist" type="double" value="0.05" />
+  <param name="oscillation_reset_angle" type="double" value="0.2" />
+  <param name="forward_point_distance" type="double" value="0.325" />
+  <param name="scaling_speed" type="double" value="0.25" />
+  <param name="max_scaling_factor" type="double" value="0.2" />
+  <param name="vx_samples" type="int" value="3" />
+  <param name="vy_samples" type="int" value="10" />
+  <param name="vth_samples" type="int" value="20" />
+  <param name="use_dwa" type="bool" value="True" />
+  <param name="restore_defaults" type="bool" value="False" />
+</node>
+\endverbatim
+

@@ -1,0 +1,8 @@
+prefix=/home/nvidia/git/repos/ros/catkin_ws/install
+
+Name: robot_pose_ekf
+Description: Description of robot_pose_ekf
+Version: 1.14.4
+Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/install/include
+Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib 
+Requires: geometry_msgs message_runtime nav_msgs roscpp sensor_msgs std_msgs
