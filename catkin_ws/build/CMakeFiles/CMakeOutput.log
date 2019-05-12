@@ -584,3 +584,31 @@ Linking C executable cmTC_1b4d0
 make[1]: Leaving directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
 
 
+Determining if the Q_WS_X11 exist passed with the following output:
+Change Dir: /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3767e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3767e.dir/build.make CMakeFiles/cmTC_3767e.dir/build
+make[1]: Entering directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3767e.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_3767e.dir/CheckSymbolExists.cxx.o -c /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_3767e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3767e.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_3767e.dir/CheckSymbolExists.cxx.o  -o cmTC_3767e -rdynamic 
+make[1]: Leaving directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
+
+File /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_X11
+  return ((int*)(&Q_WS_X11))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

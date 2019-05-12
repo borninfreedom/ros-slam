@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
 <master auto="start"/>
 
@@ -7,7 +8,9 @@
 <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
 </node>
 
-<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="0 0 0.13 0 0 0 /base_link /laser 100"/>
+<!--node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="0 0 0.13 0 0 0 /base_link /laser 100"/-->
+<node pkg="tf" type="static_transform_publisher" name="odom_2_base_link" args="0 0 0 0 0 0 /odom /base_link 10"/>
+<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="0.05 0 0.14 3.1415927 0 0 /base_link /laser 10"/>
 
 <!-- gmapping node -->
 <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping">

@@ -1,3 +1,9 @@
+# ssh免密登录
+* https://blog.csdn.net/zengqiang1/article/details/52997885
+# ubuntu串口
+* https://www.cnblogs.com/CZM-/p/5926120.html
+# static_transform_publisher问题
+* https://www.jianshu.com/p/83bbf69ba6d3
 # URDF相关参数参考
 * https://blog.csdn.net/datase/article/details/78937803
 # Human-posture-detection

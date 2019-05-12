@@ -17,9 +17,9 @@ base_controller_rate: 10
 base_frame: base_link
 
 # === Robot drivetrain parameters
-wheel_diameter: 0.062
+wheel_diameter: 0.068
 wheel_track: 0.1925
-encoder_resolution: 19
+encoder_resolution: 21
 gear_reduction: 45.0
 motors_reversed: True
 
