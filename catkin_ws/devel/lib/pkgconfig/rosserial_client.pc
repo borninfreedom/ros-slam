@@ -1,8 +1,0 @@
-prefix=/home/nvidia/git/repos/ros/catkin_ws/devel
-
-Name: rosserial_client
-Description: Description of rosserial_client
-Version: 0.8.0
-Cflags: 
-Libs: -L/home/nvidia/git/repos/ros/catkin_ws/devel/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/nvidia/git/repos/ros/catkin_ws/install
-
-Name: clear_costmap_recovery
-Description: Description of clear_costmap_recovery
-Version: 1.14.4
-Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/install/include
-Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib -lclear_costmap_recovery
-Requires: costmap_2d nav_core pluginlib roscpp tf

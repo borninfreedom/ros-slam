@@ -1,8 +1,0 @@
-prefix=/home/nvidia/git/repos/ros/catkin_ws/install
-
-Name: nav_core
-Description: Description of nav_core
-Version: 1.14.4
-Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/install/include
-Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib 
-Requires: std_msgs geometry_msgs tf costmap_2d

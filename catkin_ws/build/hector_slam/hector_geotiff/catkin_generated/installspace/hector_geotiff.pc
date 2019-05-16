@@ -1,8 +1,0 @@
-prefix=/home/nvidia/git/repos/ros/catkin_ws/install
-
-Name: hector_geotiff
-Description: Description of hector_geotiff
-Version: 0.3.5
-Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/install/include -I/usr/include/eigen3
-Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib -lgeotiff_writer /usr/lib/aarch64-linux-gnu/libQtGui.so /usr/lib/aarch64-linux-gnu/libQtCore.so
-Requires: hector_map_tools hector_nav_msgs nav_msgs pluginlib roscpp std_msgs

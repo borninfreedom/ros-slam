@@ -1,17 +1,23 @@
-#include <Wire.h>
 #define MAX_PWM   255
 #define LEFT            0
 #define RIGHT           1
 #define BAUDRATE  57600
 #define FORWARDS  true
 #define BACKWARDS false
-#define  ENA   12
+
+//电机定义，ENCODER_1代表编码器正极,A标号为左侧电机
+#define  PWMA  12
 #define  AIN1  37
 #define  AIN2  38
-#define  ENB   11
+#define  AENCODER_1     3     //INT1--中断号
+#define  AENCODER_2     2     //INT0
+#define  PWMB   11
 #define  BIN1  34
 #define  BIN2  33
+#define  BENCODER_1     18    //INT5
+#define  BENCODER_2     19    //INT4
 #define  STBY  13
+
 #define PID_RATE  30    //HZ
 #define AUTO_STOP_INTERVAL  2000
 
@@ -59,17 +65,14 @@ SetPointInfo leftPID, rightPID;
 
 void setup() {
    Serial.begin(BAUDRATE);
-   Wire.begin();
-   gy85_init();
    initEncoders();
    initMotorController();  
    resetPID();
-   
+  // setMotorSpeeds(80,80); 
 }
 
 void loop() {
-  while(Serial.available() > 0){
-   
+  while(Serial.available() > 0){ 
     chr = Serial.read();
     if(chr == 13){
       if(arg == 1)  argv1[index] = NULL;
@@ -108,5 +111,4 @@ void loop() {
     setMotorSpeeds(0,0);
     moving = 0;
   }
-  
 }

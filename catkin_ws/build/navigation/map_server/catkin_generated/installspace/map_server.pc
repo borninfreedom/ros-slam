@@ -1,8 +1,0 @@
-prefix=/home/nvidia/git/repos/ros/catkin_ws/install
-
-Name: map_server
-Description: Description of map_server
-Version: 1.14.4
-Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/install/include
-Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib -lmap_server_image_loader
-Requires: roscpp nav_msgs tf2

@@ -21,7 +21,7 @@ wheel_diameter: 0.068
 wheel_track: 0.1925
 encoder_resolution: 21
 gear_reduction: 45.0
-motors_reversed: True
+motors_reversed: False
 
 # === PID parameters
 Kp: 20

@@ -18,14 +18,14 @@
 <launch>
   <master auto="start"/>
   <node name="arduino" pkg="ros_arduino_python" type="arduino_node.py" output="screen">
-  <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
+    <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
   </node>
 
   <include file="$(find delta_lidar)/launch/delta_lidar.launch" />
 
-  <node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="0.05 0 0.14 3.1415927 0 0 /base_link /laser 100" />
-  <node pkg="tf" type="static_transform_publisher" name="odom_2_base_link" args="0 0 0 0 0 0 /odom /base_link 100" />
-
+  <node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="0 0 0.13 0 0 0 /base_link /laser 100" />
+  <!-- node pkg="tf" type="static_transform_publisher" name="odom_2_base_link" args="0 0 0 3.1415927 0 0 /odom /base_link 100" / -->
+i
 
   <!--param name="robot_description"
    textfile="$(find cartographer_ros)/urdf/backpack_2d.urdf" /-->
@@ -39,7 +39,7 @@
       output="screen">
     <remap from="scan" to="/scan" />
 	<remap from="odom" to="/odom" />
-	<!--remap from="tf" to="/tf" /-->
+	<!-- remap from="tf" to="/tf" / -->
   </node>
 
   <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"

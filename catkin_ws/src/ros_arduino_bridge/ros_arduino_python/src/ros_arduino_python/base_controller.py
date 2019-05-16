@@ -78,7 +78,7 @@ class BaseController:
         self.enc_right = None
         self.x = 0                      # position in xy plane
         self.y = 0
-        self.th = 0                     # rotation in radians
+        self.th = 0                    # rotation in radians
         self.v_left = 0
         self.v_right = 0
         self.v_des_left = 0             # cmd_vel setpoint

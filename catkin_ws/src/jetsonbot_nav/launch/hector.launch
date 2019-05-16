@@ -18,7 +18,7 @@
       <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
   </node> 
 
-  <node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser" args="-0.025 0.02 0.095 0 0 0 /$(arg base_frame) /laser 100"/>  
+  <node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser" args="0 0 0.12 0 0 0 /$(arg base_frame) /laser 100"/>  
 
   <node pkg="hector_mapping" type="hector_mapping" name="hector_mapping" output="screen">   
   <!-- Frame names -->

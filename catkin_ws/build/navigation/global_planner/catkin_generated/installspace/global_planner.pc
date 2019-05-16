@@ -1,8 +1,0 @@
-prefix=/home/nvidia/git/repos/ros/catkin_ws/install
-
-Name: global_planner
-Description: Description of global_planner
-Version: 1.14.4
-Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/install/include
-Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib -lglobal_planner
-Requires: costmap_2d dynamic_reconfigure geometry_msgs nav_core navfn nav_msgs pluginlib roscpp tf

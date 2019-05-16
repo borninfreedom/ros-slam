@@ -1,3 +1,7 @@
+#ubuntu修改默认终端
+* https://blog.csdn.net/qq_20336817/article/details/46122849
+#YAML语法
+* 不能用tab键，全用空格 ；  参数名称后面： /map   必须空一个格 https://www.jianshu.com/p/97222440cd08
 # ssh免密登录
 * https://blog.csdn.net/zengqiang1/article/details/52997885
 # ubuntu串口

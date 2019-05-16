@@ -39,11 +39,11 @@ moveBindings = {
         'i':(1,0,0,0),
         'w':(1,0,0,0),
     
-        'l':(0,0,0,1),
-        'd':(0,0,0,1),
+        'l':(0,0,0,-1),
+        'd':(0,0,0,-1),
 
-        'j':(0,0,0,-1),
-        'a':(0,0,0,-1),
+        'j':(0,0,0,1),
+        'a':(0,0,0,1),
 
         'k':(-1,0,0,0),
         's':(-1,0,0,0),
@@ -90,8 +90,8 @@ if __name__=="__main__":
     pub = rospy.Publisher('cmd_vel', Twist, queue_size = 1)
     rospy.init_node('teleop_twist_keyboard')
 
-    speed = rospy.get_param("~speed", 0.27)
-    turn = rospy.get_param("~turn", 0.029)
+    speed = rospy.get_param("~speed", 0.3)
+    turn = rospy.get_param("~turn", 0.03)
     x = 0
     y = 0
     z = 0

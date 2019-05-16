@@ -1,20 +1,15 @@
-#define LEFT_ENC_A  18    //INT5
-#define LEFT_ENC_B  19    //INT4
-#define RIGHT_ENC_A   2   //INT0
-#define RIGHT_ENC_B   3   //INT1
-
 void initEncoders(){
-  pinMode(LEFT_ENC_A,INPUT_PULLUP);
-  pinMode(LEFT_ENC_B,INPUT_PULLUP);
-  pinMode(RIGHT_ENC_A,INPUT_PULLUP);
-  pinMode(RIGHT_ENC_B,INPUT_PULLUP);
-  attachInterrupt(4,leftEncoderEvent,CHANGE);
-  attachInterrupt(0,rightEncoderEvent,CHANGE);
+  pinMode(AENCODER_1,INPUT_PULLUP);
+  pinMode(AENCODER_2,INPUT_PULLUP);
+  pinMode(BENCODER_1,INPUT_PULLUP);
+  pinMode(BENCODER_2,INPUT_PULLUP);
+  attachInterrupt(1,leftEncoderEvent,CHANGE);
+  attachInterrupt(4,rightEncoderEvent,CHANGE);
 }
 
 void leftEncoderEvent(){
-  if (digitalRead(LEFT_ENC_A) == HIGH) {
-      if (digitalRead(LEFT_ENC_B) == LOW) {
+  if (digitalRead(AENCODER_1) == HIGH) {
+      if (digitalRead(AENCODER_2) == LOW) {
         left_enc_pos--;
       }
       else {
@@ -22,7 +17,7 @@ void leftEncoderEvent(){
       }
     }
     else {
-      if (digitalRead(LEFT_ENC_B) == LOW) {
+      if (digitalRead(AENCODER_2) == LOW) {
         left_enc_pos++;
       }
       else {
@@ -32,8 +27,8 @@ void leftEncoderEvent(){
 }
 
 void rightEncoderEvent() {
-    if (digitalRead(RIGHT_ENC_A) == HIGH) {
-      if (digitalRead(RIGHT_ENC_B) == LOW) {
+    if (digitalRead(BENCODER_1) == HIGH) {
+      if (digitalRead(BENCODER_2) == LOW) {
         right_enc_pos--;
       }
       else {
@@ -41,7 +36,7 @@ void rightEncoderEvent() {
       }
     }
     else {
-      if (digitalRead(RIGHT_ENC_B) == LOW) {
+      if (digitalRead(BENCODER_2) == LOW) {
         right_enc_pos++;
       }
       else {
@@ -51,7 +46,7 @@ void rightEncoderEvent() {
 }
 
 long readEncoder(int i){
-  if(i == LEFT) return 0-left_enc_pos;
+  if(i == LEFT) return left_enc_pos;
   else return right_enc_pos;
 }
 

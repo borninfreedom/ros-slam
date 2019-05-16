@@ -1,10 +1,9 @@
 TrajectoryPlannerROS:
- max_vel_x: 3.0 #x轴方向最大速度
- min_vel_x: 0.1 #x轴方向最小速度
- max_vel_theta: 1.0 #最大角速度
- min_in_place_vel_theta: 0.4
+ max_vel_x: 0.3
+ min_vel_x: 0.15
+ max_vel_theta: 0.03
+ min_in_place_vel_theta: 0.02
 
- acc_lim_theta: 3.2 #最大角加速度
- acc_lim_x: 2.5 #x轴方向最大加速度
- acc_lim_y: 2.5 #y轴方向最大加速度
-
+ acc_lim_theta: 2.0
+ acc_lim_x: 2.0
+ acc_lim_y: 2.0

@@ -4,9 +4,6 @@
    <node name="arduino" pkg="ros_arduino_python" type="arduino_node.py" output="screen">
       <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
    </node>
-
-   <!--master auto="start"/-->
-
-   <!--node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser" args="0.05 0 0.14 0 0 0 /$(arg base_frame) /laser 100"/-->  
+   <!-- include file = "$(find delta_lidar)/launch/delta_lidar.launch" / -->
 
 </launch>

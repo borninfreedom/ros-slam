@@ -1,8 +1,0 @@
-prefix=/home/nvidia/git/repos/ros/catkin_ws/install
-
-Name: rotate_recovery
-Description: Description of rotate_recovery
-Version: 1.14.4
-Cflags: -I/home/nvidia/git/repos/ros/catkin_ws/install/include
-Libs: -L/home/nvidia/git/repos/ros/catkin_ws/install/lib -lrotate_recovery
-Requires: roscpp pluginlib

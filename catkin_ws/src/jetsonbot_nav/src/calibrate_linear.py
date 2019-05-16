@@ -17,7 +17,7 @@ class CalibrateLinear():
 
         # Set the distance to travel
         self.test_distance = 1.0 # meters
-        self.speed = 1.0 # meters per second
+        self.speed = 0.3 # meters per second
         self.tolerance = 0.01 # meters
         self.odom_linear_scale_correction = 1.0
         self.start_test = True

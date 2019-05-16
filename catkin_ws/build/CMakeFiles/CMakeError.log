@@ -1,23 +1,23 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_402a4/fast"
-/usr/bin/make -f CMakeFiles/cmTC_402a4.dir/build.make CMakeFiles/cmTC_402a4.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_8daea/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8daea.dir/build.make CMakeFiles/cmTC_8daea.dir/build
 make[1]: Entering directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_402a4.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_402a4.dir/CheckSymbolExists.c.o   -c /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_402a4
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_402a4.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_402a4.dir/CheckSymbolExists.c.o  -o cmTC_402a4 -rdynamic 
-CMakeFiles/cmTC_402a4.dir/CheckSymbolExists.c.o：在函数‘main’中：
+Building C object CMakeFiles/cmTC_8daea.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_8daea.dir/CheckSymbolExists.c.o   -c /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_8daea
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8daea.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_8daea.dir/CheckSymbolExists.c.o  -o cmTC_8daea -rdynamic 
+CMakeFiles/cmTC_8daea.dir/CheckSymbolExists.c.o：在函数‘main’中：
 CheckSymbolExists.c:(.text+0x14)：对‘pthread_create’未定义的引用
 CheckSymbolExists.c:(.text+0x18)：对‘pthread_create’未定义的引用
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_402a4.dir/build.make:97: recipe for target 'cmTC_402a4' failed
-make[1]: *** [cmTC_402a4] Error 1
+CMakeFiles/cmTC_8daea.dir/build.make:97: recipe for target 'cmTC_8daea' failed
+make[1]: *** [cmTC_8daea] Error 1
 make[1]: Leaving directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_402a4/fast' failed
-make: *** [cmTC_402a4/fast] Error 2
+Makefile:126: recipe for target 'cmTC_8daea/fast' failed
+make: *** [cmTC_8daea/fast] Error 2
 
 File /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -37,136 +37,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_69c91/fast"
-/usr/bin/make -f CMakeFiles/cmTC_69c91.dir/build.make CMakeFiles/cmTC_69c91.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_9d5d8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9d5d8.dir/build.make CMakeFiles/cmTC_9d5d8.dir/build
 make[1]: Entering directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_69c91.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_69c91.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_69c91
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69c91.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_69c91.dir/CheckFunctionExists.c.o  -o cmTC_69c91 -rdynamic -lpthreads 
+Building C object CMakeFiles/cmTC_9d5d8.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_9d5d8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9d5d8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d5d8.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_9d5d8.dir/CheckFunctionExists.c.o  -o cmTC_9d5d8 -rdynamic -lpthreads 
 /usr/bin/ld: 找不到 -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_69c91.dir/build.make:97: recipe for target 'cmTC_69c91' failed
-make[1]: *** [cmTC_69c91] Error 1
+CMakeFiles/cmTC_9d5d8.dir/build.make:97: recipe for target 'cmTC_9d5d8' failed
+make[1]: *** [cmTC_9d5d8] Error 1
 make[1]: Leaving directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_69c91/fast' failed
-make: *** [cmTC_69c91/fast] Error 2
-
-
-Determining if the Q_WS_WIN exist failed with the following output:
-Change Dir: /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_09245/fast"
-/usr/bin/make -f CMakeFiles/cmTC_09245.dir/build.make CMakeFiles/cmTC_09245.dir/build
-make[1]: Entering directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_09245.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_09245.dir/CheckSymbolExists.cxx.o -c /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
-/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
-   return ((int*)(&Q_WS_WIN))[argc];
-                   ^
-CMakeFiles/cmTC_09245.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_09245.dir/CheckSymbolExists.cxx.o' failed
-make[1]: *** [CMakeFiles/cmTC_09245.dir/CheckSymbolExists.cxx.o] Error 1
-make[1]: Leaving directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_09245/fast' failed
-make: *** [cmTC_09245/fast] Error 2
-
-File /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
-/* */
-#include <QtCore/qglobal.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef Q_WS_WIN
-  return ((int*)(&Q_WS_WIN))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-
-Determining if the Q_WS_QWS exist failed with the following output:
-Change Dir: /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_d6e7c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d6e7c.dir/build.make CMakeFiles/cmTC_d6e7c.dir/build
-make[1]: Entering directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d6e7c.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_d6e7c.dir/CheckSymbolExists.cxx.o -c /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
-/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
-   return ((int*)(&Q_WS_QWS))[argc];
-                   ^
-CMakeFiles/cmTC_d6e7c.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d6e7c.dir/CheckSymbolExists.cxx.o' failed
-make[1]: *** [CMakeFiles/cmTC_d6e7c.dir/CheckSymbolExists.cxx.o] Error 1
-make[1]: Leaving directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_d6e7c/fast' failed
-make: *** [cmTC_d6e7c/fast] Error 2
-
-File /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
-/* */
-#include <QtCore/qglobal.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef Q_WS_QWS
-  return ((int*)(&Q_WS_QWS))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-
-Determining if the Q_WS_MAC exist failed with the following output:
-Change Dir: /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_a2bb2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a2bb2.dir/build.make CMakeFiles/cmTC_a2bb2.dir/build
-make[1]: Entering directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_a2bb2.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_a2bb2.dir/CheckSymbolExists.cxx.o -c /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
-/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
-   return ((int*)(&Q_WS_MAC))[argc];
-                   ^
-CMakeFiles/cmTC_a2bb2.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_a2bb2.dir/CheckSymbolExists.cxx.o' failed
-make[1]: *** [CMakeFiles/cmTC_a2bb2.dir/CheckSymbolExists.cxx.o] Error 1
-make[1]: Leaving directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_a2bb2/fast' failed
-make: *** [cmTC_a2bb2/fast] Error 2
-
-File /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
-/* */
-#include <QtCore/qglobal.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef Q_WS_MAC
-  return ((int*)(&Q_WS_MAC))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-
-Determining if the include file pgm.h exists failed with the following output:
-Change Dir: /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_6cc26/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6cc26.dir/build.make CMakeFiles/cmTC_6cc26.dir/build
-make[1]: Entering directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_6cc26.dir/CheckIncludeFile.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_6cc26.dir/CheckIncludeFile.cxx.o -c /home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
-/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:17: fatal error: pgm.h: 没有那个文件或目录
-compilation terminated.
-CMakeFiles/cmTC_6cc26.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_6cc26.dir/CheckIncludeFile.cxx.o' failed
-make[1]: *** [CMakeFiles/cmTC_6cc26.dir/CheckIncludeFile.cxx.o] Error 1
-make[1]: Leaving directory '/home/nvidia/git/repos/ros/catkin_ws/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_6cc26/fast' failed
-make: *** [cmTC_6cc26/fast] Error 2
+Makefile:126: recipe for target 'cmTC_9d5d8/fast' failed
+make: *** [cmTC_9d5d8/fast] Error 2
 
 
