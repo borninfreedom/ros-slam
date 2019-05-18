@@ -1,0 +1,17 @@
+<launch>
+
+  <node name="arduino" pkg="ros_arduino_python" type="arduino_node.py" output="screen">
+    <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
+  </node>
+  
+  <include file="$(find delta_lidar)/launch/delta_lidar.launch"/>
+
+  <node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="0 0 0.13 0.0 0.0 0 /base_link /laser 100"/>
+
+  <node name="map_server" pkg="map_server" type="map_server" args="/home/nvidia/maps/nengyuan.yaml" />
+
+  <include file="$(find jetsonbot_nav)/launch/amcl.launch" />
+
+  <include file="$(find jetsonbot_nav)/launch/move_base.launch" />
+  
+</launch>

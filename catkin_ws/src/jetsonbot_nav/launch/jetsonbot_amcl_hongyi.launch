@@ -11,7 +11,7 @@
 <node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_link" args="0 0 0.13 0.0 0.0 0 /base_link /laser 50"/>
 
 <!-- Map server -->
-<node name="map_server" pkg="map_server" type="map_server" args="/home/nvidia/maps/nengyuan.yaml" />
+<node name="map_server" pkg="map_server" type="map_server" args="/home/nvidia/maps/hongyi.yaml" />
 
 <!-- amcl node -->
 <node pkg="amcl" type="amcl" name="amcl" output="screen">

@@ -1,4 +1,12 @@
-#ubuntu修改默认终端
+# 值得关注的博客er
+* https://www.cnblogs.com/zjiaxing/
+# AMCL参数配置说明
+* https://www.cnblogs.com/dyan1024/p/7825988.html
+# 串口绑定
+* http://www.wh-robot.com/whb/?p=746
+# ROS主从机和时间同步、远程代码
+* https://zhuanlan.zhihu.com/p/52005221
+# ubuntu修改默认终端
 * https://blog.csdn.net/qq_20336817/article/details/46122849
 #YAML语法
 * 不能用tab键，全用空格 ；  参数名称后面： /map   必须空一个格 https://www.jianshu.com/p/97222440cd08
