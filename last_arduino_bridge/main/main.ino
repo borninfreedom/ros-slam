@@ -19,7 +19,7 @@
 #define  STBY  13
 
 #define PID_RATE  30    //HZ
-#define AUTO_STOP_INTERVAL  2000
+#define AUTO_STOP_INTERVAL  2000   //这个参数控制一条指令执行多长的时间，现在是2秒，就是比如发一个rostopic pub cmd_vel的信息，小车会执行指令2秒，可以根据自己需要调整
 
 boolean directionLeft = false;
 boolean directionRight = false;
@@ -49,6 +49,7 @@ long arg1;
 long arg2;
 volatile long left_enc_pos = 0L;
 volatile long right_enc_pos = 0L;
+//这部分代码时进行pid计算必须的参数
 typedef struct{
   double TargetTicksPerFrame;  //在每帧的目标速度
   long Encoder;     //编码器脉冲数量
@@ -63,6 +64,9 @@ typedef struct{
 SetPointInfo;
 SetPointInfo leftPID, rightPID;
 
+
+//可能会觉着main里面有些乱，有pid需要的参数，有其他的声明的参数等。我用arduino ide的时候很奇怪，添加.h  .cpp很大几率会编译出错，所以我就都用.ino的方式，这种方式类似于写了一个.ino，只是拆开更好看而已
+//编译器工作的时候还是会把所有的代码搞到一个.ino里面去，所以在encoder.ino里面声明一个变量和在main.ino里面声明一个变量时一样的，把所有变量都声明在main里面感觉好处理一些，不用参数各处都有，修改麻烦
 void setup() {
    Serial.begin(BAUDRATE);
    initEncoders();
@@ -71,7 +75,7 @@ void setup() {
   // setMotorSpeeds(80,80); 
 }
 
-void loop() {
+void loop() {                     //loop里面为上下位机通讯的程序，下位机必须时时循环以等待接受上位机的指令，所以必须一直在循环，不要更改结构,也不建议修改loop里面的代码
   while(Serial.available() > 0){ 
     chr = Serial.read();
     if(chr == 13){

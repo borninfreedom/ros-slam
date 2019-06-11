@@ -1,3 +1,5 @@
+//pid部分基本上时现成的算法，不过还是要多读几遍这个代码，对于了解pid的工作原理和后面pid的调试都很有好处，知道了原理自然调节起来游刃有余
+
 void resetPID(){
   leftPID.TargetTicksPerFrame = 0.0;
   leftPID.Encoder = readEncoder(LEFT);
@@ -22,11 +24,11 @@ void dorightPID(SetPointInfo * p) {
   input = p->Encoder - p->PrevEnc;
   Perror = p->TargetTicksPerFrame - input;
 
-  output = (right_Kp * Perror - right_Kd * (input - p->PrevInput) + p->ITerm) / right_Ko;
-  p->PrevEnc = p->Encoder;
-
-  output += p->output;
- 
+  output = (right_Kp * Perror - right_Kd * (input - p->PrevInput) + p->ITerm) / right_Ko;       //这就是pid计算输出值的函数式子，从这可以清楚的看到三大k参数的作用，起抑制还是促进作用
+  p->PrevEnc = p->Encoder;									//对于新的电机，一般特性差不多，pid参数设置为相同的一般电机转起来也是差不多的
+												//因为刚买的电机，我看了一下，pid参数相同的情况下，走起来直线效果很好
+  output += p->output;										//不过，这有个前提条件，万向轮在后面，如果万向轮在前面，时走不好直线的，我尝试调了很长时间pid，万向轮在前
+ 												//就是走不好，可以尝试一下，万向轮在前调好了叫我一声
   if (output >= MAX_PWM)
     output = MAX_PWM;
   else if (output <= -MAX_PWM)

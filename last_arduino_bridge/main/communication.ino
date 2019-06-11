@@ -1,3 +1,5 @@
+//除了注释部分的代码可以根据需要更改，其他部分的代码一般不更改框架，只是做微调，因为这是在ros_arduino_bridge的通信协议下进行的自定义
+//这一部分根据自己需要写指令，但是要注意，如果在这里添加了指令，同时想要指令发挥作用，必须在上位机的ros_arduino_python文件夹下的文件进行更改才可以，后面我还会再说
 #define ANALOG_READ    'a'
 #define GET_BAUDRATE   'b'
 #define PIN_MODE       'c'
@@ -29,7 +31,7 @@ int runCommand(){
   int i = 0;
   char *p = argv1;
   char *str;
-  int pid_args[8];
+  int pid_args[8];   //因为是两个轮子pid独立调速，所以有8个参数，kp kd ki ko(ko在pid的源代码中作为除数，越小pid值越大，设为默认值即可，一般情况下不调节此值)
   arg1 = atoi(argv1);
   arg2 = atoi(argv2);
 
@@ -42,7 +44,7 @@ int runCommand(){
       Serial.print(" ");
       Serial.println(readPidIn(RIGHT));
       break;
-    case READ_PIDOUT:
+    case READ_PIDOUT:            //这个是自己添加的case，还有其他几个也是，留意上位机的Python代码时怎么写的
       Serial.print(readPidOut(LEFT));
       Serial.print(" ");
       Serial.println(readPidOut(RIGHT));
@@ -68,7 +70,7 @@ int runCommand(){
       Serial.println("OK");
       break;
     case PING:
-//      Serial.println(Ping(arg1));
+//      Serial.println(Ping(arg1));    //ping要注释掉，我们没有他的函数原型
       break;
     case READ_ENCODERS:
       Serial.print(readEncoder(LEFT));

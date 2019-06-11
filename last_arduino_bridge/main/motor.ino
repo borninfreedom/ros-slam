@@ -1,3 +1,5 @@
+//这部分就是驱动tb6612fng的代码，可以先了解一下这个驱动器的原理和接口定义
+
 boolean direction(int i){
   if (i == LEFT)  return directionLeft;
   else    return directionRight;
@@ -19,7 +21,7 @@ void setMotorSpeed(int i, int spd){
   if (spd < -MAX_PWM)   spd = -1 * MAX_PWM;
   if (i == LEFT){
     if (spd >= 0){
-      directionLeft =  FORWARDS;
+      directionLeft =  FORWARDS;         //这些根据真值表来的，在我的论文中有写，也可以自己去必应一下，网上有很多资料
       digitalWrite(STBY,HIGH);
       digitalWrite(AIN1,HIGH);
       digitalWrite(AIN2,LOW);
