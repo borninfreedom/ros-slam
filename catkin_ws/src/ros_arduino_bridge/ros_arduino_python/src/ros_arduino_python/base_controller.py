@@ -20,6 +20,8 @@
     
     http://www.gnu.org/licenses
 """
+#这个代码包含pid参数的设置，tf的发布等
+
 import roslib; roslib.load_manifest('ros_arduino_python')
 import rospy
 import os
@@ -38,7 +40,7 @@ class BaseController:
         self.rate = float(rospy.get_param("~base_controller_rate", 10))
         self.timeout = rospy.get_param("~base_controller_timeout", 1.0)
         self.stopped = False
-        self.debugPID = True
+        self.debugPID = True           #这个时为了调试方便新添加的参数，可以先rostopic list看一下，然后把他改成False再rostopic list看一下
                  
         pid_params = dict()
         pid_params['wheel_diameter'] = rospy.get_param("~wheel_diameter", "") 
@@ -98,7 +100,8 @@ class BaseController:
         rospy.loginfo("Started base controller for a base of " + str(self.wheel_track) + "m wide with " + str(self.encoder_resolution) + " ticks per rev")
         rospy.loginfo("Publishing odometry data at: " + str(self.rate) + " Hz using " + str(self.base_frame) + " as base frame")
         
-        if self.debugPID:
+        #上面调试接口的函数原型，就是多发布了几个rostopic，在学习ros的时候除了c++代码的要看，Python代码的也要会
+        if self.debugPID:  
         	self.lEncoderPub = rospy.Publisher('Lencoder',Int32, queue_size=5)
         	self.rEncoderPub = rospy.Publisher('Rencoder',Int32, queue_size=5)
         	self.lPidoutPub = rospy.Publisher('Lpidout',Int32, queue_size=5)

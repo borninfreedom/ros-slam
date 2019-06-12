@@ -77,7 +77,7 @@ void updatePID(){
   dorightPID(&rightPID);
   setMotorSpeeds(leftPID.output, rightPID.output);
 }
-
+//这一部分的代码的调用在communication.ino里面，为了调试使用的，上位机还有部分代码处理这部分数据，将这些数据通过rostopic发布出去
 long readPidIn(int i){
   long pidin = 0;
   if (i == LEFT)  pidin = leftPID.PrevInput;

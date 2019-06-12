@@ -20,6 +20,7 @@
     http://www.gnu.org/licenses/gpl.html
 
 """
+# 这个文件的代码主要就是处理和下位机的通信和数据chuli
 
 import thread
 from math import pi as PI, degrees, radians
@@ -248,6 +249,7 @@ class Arduino:
         self.mutex.release()
         return ack == 'OK'
 
+# pid部分因为我们修改了双电机单独pid，所以多加了4个参数
     def update_pid(self, left_Kp, left_Kd, left_Ki, left_Ko, right_Kp, right_Kd, right_Ki, right_Ko):
         ''' Set the PID parameters on the Arduino
         '''
@@ -328,7 +330,7 @@ class Arduino:
             The returned position is converted from degrees to radians
         '''
         return radians(self.execute('t %d' %id))
-
+#这几个函数就是自己添加的与下位机对应的函数原型，如果自己也想添加一些函数，就仿照这个就可以，不过写Python代码一定要注意缩进，统一用空格缩进，不要用tab键，因为tab键不同的空格数，容易造成代码对不齐
     def get_pidin(self):
         values = self.execute_array('i')
         if len(values) != 2:

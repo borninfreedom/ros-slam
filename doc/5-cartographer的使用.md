@@ -13,6 +13,7 @@ wstool merge -t src  https://raw.githubusercontent.com/googlecartographer/cartog
 一定要注意，在执行下一步指令之前，要对官网的安装方式进行些修改，原ceres网站国内上不去，需要改成github上对应的网址
 
 cd src
+ls -ah
 vi .rosinstall
 
 将 ceres-solver的uri改为下面

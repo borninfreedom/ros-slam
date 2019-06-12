@@ -3,7 +3,7 @@
 # For a wireless connection like XBee, the port is typically
 # /dev/ttyUSB# where # is a number such as 0, 1, 2, etc.
 
-port: /dev/arduino
+port: /dev/arduino     #这个port的名称时经过端口绑定后的名称
 baud: 57600
 timeout: 0.1
 
@@ -14,15 +14,19 @@ use_base_controller: True
 base_controller_rate: 10
 
 # For a robot that uses base_footprint, change base_frame to base_footprint
-base_frame: base_link
+base_frame: base_link        #这个主要有base_link和base_footprint两种，差不多     ----------------
+                                                      #                           -              -
+# === Robot drivetrain parameters                     #                           -              -
+wheel_diameter: 0.068                                 #                           -              -
+wheel_track: 0.1925                                   #                           -       ×      -      一般×那个位置就是base_footprint,就是指小车底盘的中心并且和平面接触的那个地方，base_link就是base_footprint
+encoder_resolution: 21                                #                           -              -      在Z周方向上的偏移量。如果程序中不使用tf_transform_publish显式指定，指的就是一个位置
+gear_reduction: 45.0                                  #                           -              -
+motors_reversed: False                                #                           -              -
+                                                      #                           ----------------
 
-# === Robot drivetrain parameters
-wheel_diameter: 0.068
-wheel_track: 0.1925
-encoder_resolution: 21
-gear_reduction: 45.0
-motors_reversed: False
-
+#上面几个参数的说明：wheel_diameter 轮子直径   wheel_track 两个轮子之间的距离   encoder_resolution  编码器的线数，未减速之前的线数，如果看base_controller.py和arduino_driver.py的源码的话，会注意到encoder_resolutio
+#n还乘了减速比，所以是减速前的线数   gear_reduction  减速比     motor_reversed  电机是否反转
+#
 # === PID parameters
 Kp: 20
 Kd: 12
@@ -32,7 +36,7 @@ accel_limit: 1.0
 left_Kp: 20
 left_Kd: 12
 left_Ki: 0
-left_Ko: 50
+left_Ko: 50    #一般不要改动Ko
 
 right_Kp: 20
 right_Kd: 12
