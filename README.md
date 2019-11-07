@@ -1,3 +1,41 @@
+```
+raw.githubusercontent被墙，以前的方法可能并不适用，在没有翻墙的情况下，即使把rosdep init生成的链接放到浏览器上也没法访问。所以，需要一点新的解决方法：
+
+1. 【必须】 有能翻墙的代理端口，http，socks协议都可以。
+
+2.  因为ssr使用比较多，在ubuntu上配置ssr相对容易【如果需要教程就在评论区留言】，所以本教程使用socks5代理，socks5的默认代理地址是127.0.0.1：1080，在配置ssr的时候这是默认值，也可以自定义。
+
+3. ssr配置好以后，下面让终端走socks5代理。
+
+4. 方法见链接：https://blog.fazero.me/2015/08/31/%E5%88%A9%E7%94%A8proxychains%E5%9C%A8%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8socks5%E4%BB%A3%E7%90%86/
+
+5. 为了防止链接失效，再重复一遍。
+
+git clone https://github.com/rofl0r/proxychains-ng.git
+cd proxychains-ng
+./configure
+make && make install
+cp ./src/proxychains.conf /etc/proxychains.conf
+cd .. && rm -rf proxychains-ng
+ 
+vim /etc/proxychains.conf
+ 
+将socks4 127.0.0.1 9095改为
+socks5 127.0.0.1 1080
+ 
+ps: 默认的socks4 127.0.0.1 9095是tor代理，而socks5 127.0.0.1 1080是shadowsocks的代理。
+ 
+在需要代理的命令前加上 proxychains4 ，如：
+ 
+proxychains4 wget http://xxx.com/xxx.zip
+ 
+6. 所以，执行rosdep update就需要这样就可以：
+
+proxychains4  rosdep update
+
+7. 亲测非常可行，秒成功。
+```
+
 # 值得关注的博客er
 * https://www.cnblogs.com/zjiaxing/
 # AMCL参数配置说明
