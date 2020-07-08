@@ -1,0 +1,3063 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='Starting Pen'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='wall_01'>
+          <pose frame=''>-0 0 2.14 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>12.15 0.31 4.28</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_02'>
+          <pose frame=''>-5.28 14.3205 2.14 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>14.8 0.46 4.28</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_03'>
+          <pose frame=''>-5.91 5 2.14 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.385 10.3 4.28</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_04'>
+          <pose frame=''>5.91 5.161 2.14 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.385 10.66 4.28</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_05'>
+          <pose frame=''>3.9 10.285 2.14 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.38 0.45 4.28</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_06'>
+          <pose frame=''>-4 9.95 2.14 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.25 0.45 4.28</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_07'>
+          <pose frame=''>1.94 12.3 2.14 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.45 4.5 4.28</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_arrow'>
+          <pose frame=''>-0.232 14.03 2.46 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>3.33 0.12 1.16</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='collision_floor'>
+          <pose frame=''>-3.21 7.355 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>20 16 0.01</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual_osrf'>
+          <pose frame=''>-5.74 4.99 3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.01 6 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/OSRF</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_osrf_2'>
+          <pose frame=''>5.74 4.99 3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.01 6 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/OSRF</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://starting_pen/meshes/starting_pen.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='visual_floor_0'>
+          <pose frame=''>-12.21 0.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_1'>
+          <pose frame=''>-10.21 0.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_2'>
+          <pose frame=''>-8.21 0.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_3'>
+          <pose frame=''>-6.21 0.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_4'>
+          <pose frame=''>-4.21 0.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_5'>
+          <pose frame=''>-2.21 0.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_6'>
+          <pose frame=''>-0.21 0.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_7'>
+          <pose frame=''>1.79 0.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_8'>
+          <pose frame=''>3.79 0.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_9'>
+          <pose frame=''>5.79 0.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_10'>
+          <pose frame=''>-12.21 2.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_11'>
+          <pose frame=''>-10.21 2.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_12'>
+          <pose frame=''>-8.21 2.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_13'>
+          <pose frame=''>-6.21 2.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_14'>
+          <pose frame=''>-4.21 2.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_15'>
+          <pose frame=''>-2.21 2.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_16'>
+          <pose frame=''>-0.21 2.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_17'>
+          <pose frame=''>1.79 2.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_18'>
+          <pose frame=''>3.79 2.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_19'>
+          <pose frame=''>5.79 2.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_20'>
+          <pose frame=''>-12.21 4.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_21'>
+          <pose frame=''>-10.21 4.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_22'>
+          <pose frame=''>-8.21 4.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_23'>
+          <pose frame=''>-6.21 4.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_24'>
+          <pose frame=''>-4.21 4.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_25'>
+          <pose frame=''>-2.21 4.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_26'>
+          <pose frame=''>-0.21 4.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_27'>
+          <pose frame=''>1.79 4.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_28'>
+          <pose frame=''>3.79 4.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_29'>
+          <pose frame=''>5.79 4.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_30'>
+          <pose frame=''>-12.21 6.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_31'>
+          <pose frame=''>-10.21 6.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_32'>
+          <pose frame=''>-8.21 6.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_33'>
+          <pose frame=''>-6.21 6.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_34'>
+          <pose frame=''>-4.21 6.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_35'>
+          <pose frame=''>-2.21 6.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_36'>
+          <pose frame=''>-0.21 6.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_37'>
+          <pose frame=''>1.79 6.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_38'>
+          <pose frame=''>3.79 6.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_39'>
+          <pose frame=''>5.79 6.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_40'>
+          <pose frame=''>-12.21 8.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_41'>
+          <pose frame=''>-10.21 8.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_42'>
+          <pose frame=''>-8.21 8.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_43'>
+          <pose frame=''>-6.21 8.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_44'>
+          <pose frame=''>-4.21 8.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_45'>
+          <pose frame=''>-2.21 8.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_46'>
+          <pose frame=''>-0.21 8.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_47'>
+          <pose frame=''>1.79 8.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_48'>
+          <pose frame=''>3.79 8.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_49'>
+          <pose frame=''>5.79 8.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_50'>
+          <pose frame=''>-12.21 10.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_51'>
+          <pose frame=''>-10.21 10.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_52'>
+          <pose frame=''>-8.21 10.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_53'>
+          <pose frame=''>-6.21 10.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_54'>
+          <pose frame=''>-4.21 10.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_55'>
+          <pose frame=''>-2.21 10.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_56'>
+          <pose frame=''>-0.21 10.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_57'>
+          <pose frame=''>1.79 10.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_58'>
+          <pose frame=''>3.79 10.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_59'>
+          <pose frame=''>5.79 10.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_60'>
+          <pose frame=''>-12.21 12.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_61'>
+          <pose frame=''>-10.21 12.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_62'>
+          <pose frame=''>-8.21 12.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_63'>
+          <pose frame=''>-6.21 12.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_64'>
+          <pose frame=''>-4.21 12.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_65'>
+          <pose frame=''>-2.21 12.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_66'>
+          <pose frame=''>-0.21 12.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_67'>
+          <pose frame=''>1.79 12.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_68'>
+          <pose frame=''>3.79 12.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_69'>
+          <pose frame=''>5.79 12.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_70'>
+          <pose frame=''>-12.21 14.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_71'>
+          <pose frame=''>-10.21 14.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_72'>
+          <pose frame=''>-8.21 14.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_73'>
+          <pose frame=''>-6.21 14.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_74'>
+          <pose frame=''>-4.21 14.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_75'>
+          <pose frame=''>-2.21 14.35 0 0 -0 1.5707</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_76'>
+          <pose frame=''>-0.21 14.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_77'>
+          <pose frame=''>1.79 14.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_78'>
+          <pose frame=''>3.79 14.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/FloorStripped</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_floor_79'>
+          <pose frame=''>5.79 14.35 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2 2 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://starting_pen/materials/scripts</uri>
+              <uri>model://starting_pen/materials/textures</uri>
+              <name>StartingPen/Floor</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1.83584 -5.80471 0 0 -0 0</pose>
+    </model>
+    <model name='unit_cylinder_0'>
+      <pose frame=''>4.26711 -2.69729 0.5 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.5</radius>
+              <length>1</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.5</radius>
+              <length>1</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='bookshelf'>
+      <static>1</static>
+      <link name='link'>
+        <inertial>
+          <mass>1</mass>
+        </inertial>
+        <collision name='back'>
+          <pose frame=''>0 0.005 0.6 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.9 0.01 1.2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual1'>
+          <pose frame=''>0 0.005 0.6 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.9 0.01 1.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='left_side'>
+          <pose frame=''>0.45 -0.195 0.6 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.4 1.2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual2'>
+          <pose frame=''>0.45 -0.195 0.6 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.4 1.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='right_side'>
+          <pose frame=''>-0.45 -0.195 0.6 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.4 1.2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual3'>
+          <pose frame=''>-0.45 -0.195 0.6 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.4 1.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bottom'>
+          <pose frame=''>0 -0.195 0.03 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.88 0.4 0.06</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual4'>
+          <pose frame=''>0 -0.195 0.03 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.88 0.4 0.06</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='top'>
+          <pose frame=''>0 -0.195 1.19 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.88 0.4 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual5'>
+          <pose frame=''>0 -0.195 1.19 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.88 0.4 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='low_shelf'>
+          <pose frame=''>0 -0.195 0.43 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.88 0.4 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual6'>
+          <pose frame=''>0 -0.195 0.43 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.88 0.4 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='high_shelf'>
+          <pose frame=''>0 -0.195 0.8 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.88 0.4 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual7'>
+          <pose frame=''>0 -0.195 0.8 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.88 0.4 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>-1.01924 1.91832 0 0 -0 0</pose>
+    </model>
+    <model name='cube_20k'>
+      <link name='link'>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>4.35212 1.5158 0 0 -0 0</pose>
+    </model>
+    <model name='Dumpster'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://dumpster/meshes/dumpster.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://dumpster/meshes/dumpster.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://dumpster/materials/scripts</uri>
+              <uri>model://dumpster/materials/textures</uri>
+              <name>Dumpster/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>-0.900233 -2.81382 0 0 -0 0</pose>
+    </model>
+    <model name='first_2015_trash_can'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 0 0.3683 0 -0 0</pose>
+          <mass>4.83076</mass>
+          <inertia>
+            <ixx>0.281534</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.281534</iyy>
+            <iyz>0</iyz>
+            <izz>0.126223</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://first_2015_trash_can/meshes/trash_can.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://first_2015_trash_can/meshes/trash_can.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>2.50601 4.51324 0 0 -0 0</pose>
+    </model>
+    <model name='person_standing'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 -0.1 0.01 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0.04 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://person_standing/meshes/standing.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0.04 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://person_standing/meshes/standing.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1.61699 0.00728 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>-0.152467 0.643132 0 0 -0 0</pose>
+    </model>
+    <model name='cabinet'>
+      <static>1</static>
+      <link name='cabinet_bottom_plate'>
+        <inertial>
+          <pose frame=''>0 0 -1 0 -0 0</pose>
+          <inertia>
+            <ixx>2.05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.05</iyy>
+            <iyz>0</iyz>
+            <izz>2.05</izz>
+          </inertia>
+          <mass>25</mass>
+        </inertial>
+        <collision name='cabinet_bottom_plate_geom'>
+          <pose frame=''>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.45 0.45 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='cabinet_bottom_plate_geom_visual'>
+          <pose frame=''>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.45 0.45 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='cabinet_bottom_plate_geom_cabinet_back_plate'>
+          <pose frame=''>0.235 0 0.51 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.45 1.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='cabinet_bottom_plate_geom_cabinet_back_plate_visual'>
+          <pose frame=''>0.235 0 0.51 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.45 1.02</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='cabinet_bottom_plate_geom_cabinet_left_plate'>
+          <pose frame=''>0 0.235 0.51 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.45 0.02 1.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='cabinet_bottom_plate_geom_cabinet_left_plate_visual'>
+          <pose frame=''>0 0.235 0.51 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.45 0.02 1.02</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='cabinet_bottom_plate_geom_cabinet_middle_plate'>
+          <pose frame=''>0 0 0.51 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.45 0.45 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='cabinet_bottom_plate_geom_cabinet_middle_plate_visual'>
+          <pose frame=''>0 0 0.51 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.45 0.45 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='cabinet_bottom_plate_geom_cabinet_right_plate'>
+          <pose frame=''>0 -0.235 0.51 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.45 0.02 1.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='cabinet_bottom_plate_geom_cabinet_right_plate_visual'>
+          <pose frame=''>0 -0.235 0.51 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.45 0.02 1.02</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='cabinet_bottom_plate_geom_cabinet_top_plate'>
+          <pose frame=''>0 0 1.01 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.45 0.45 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='cabinet_bottom_plate_geom_cabinet_top_plate_visual'>
+          <pose frame=''>0 0 1.01 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.45 0.45 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1.40321 -1.81513 0 0 -0 0</pose>
+    </model>
+    <model name='cardboard_box'>
+      <pose frame=''>-1.10196 7.78877 0.15 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <mass>2</mass>
+          <inertia>
+            <ixx>0.0416667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0566667</iyy>
+            <iyz>0</iyz>
+            <izz>0.0683333</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.5 0.4 0.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+07</kp>
+                <kd>1</kd>
+                <min_depth>0.001</min_depth>
+                <max_vel>0.1</max_vel>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 -0.15 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://cardboard_box/meshes/cardboard_box.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='cube_20k_0'>
+      <link name='link'>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.649609 7.36397 0 0 -0 0</pose>
+    </model>
+    <model name='drc_practice_blue_cylinder'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_blue_cylinder/meshes/cylinder.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_blue_cylinder/meshes/cylinder.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>-3.44468 5.39887 0 0 -0 0</pose>
+    </model>
+    <model name='drc_practice_organge_jersey_barrier'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_orange_jersey_barrier/meshes/jersey_barrier.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_orange_jersey_barrier/meshes/jersey_barrier.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>-5.62788 7.06495 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>839 359000000</sim_time>
+      <real_time>342 202558666</real_time>
+      <wall_time>1594212309 754343383</wall_time>
+      <iterations>223946</iterations>
+      <model name='Dumpster'>
+        <pose frame=''>-0.900293 -2.81368 0.050918 0 -0 0.000138</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-0.900293 -2.81368 0.050918 0 -0 0.000138</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.006946 0.001572 4.65341 -1.71099 1.27888 -4e-06</acceleration>
+          <wrench>0.006946 0.001572 4.65341 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Starting Pen'>
+        <pose frame=''>1.83584 -5.80471 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.83584 -5.80471 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='asphalt_plane'>
+        <pose frame=''>-0.152467 0.643132 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-0.152467 0.643132 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='bookshelf'>
+        <pose frame=''>-1.01924 1.91832 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1.01924 1.91832 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cabinet'>
+        <pose frame=''>1.40321 -1.81513 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='cabinet_bottom_plate'>
+          <pose frame=''>1.40321 -1.81513 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cardboard_box'>
+        <pose frame=''>-1.10196 7.78877 0.199 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1.10196 7.78877 0.199 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cube_20k'>
+        <pose frame=''>4.36497 1.51106 0.549999 1e-06 -0 -0.008151</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>4.36497 1.51106 1.05 1e-06 -0 -0.008151</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.28919 -10.6199 12.1003 -1.9415 0.291592 -0.005002</acceleration>
+          <wrench>0.28919 -10.6199 12.1003 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cube_20k_0'>
+        <pose frame=''>0.766888 7.01106 0.55 0 -0 0.086293</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.766888 7.01106 1.05 0 -0 0.086293</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-7.8173 -3.20762 6.42115 -3.09913 -1.52597 0.022369</acceleration>
+          <wrench>-7.8173 -3.20762 6.42115 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='drc_practice_blue_cylinder'>
+        <pose frame=''>-3.44468 5.39887 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-3.44468 5.39887 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='drc_practice_organge_jersey_barrier'>
+        <pose frame=''>-5.62788 7.06495 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-5.62788 7.06495 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='first_2015_trash_can'>
+        <pose frame=''>2.50596 4.51333 0.049998 -3e-06 1.1e-05 -0.000196</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.50596 4.51333 0.049998 -3e-06 1.1e-05 -0.000196</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1.52916 -0.580004 -0.327374 -1.51738 -0.991613 3.05592</acceleration>
+          <wrench>7.38702 -2.80186 -1.58146 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='my_robot'>
+        <pose frame=''>0.23259 1.20313 0.050015 -0 -0.02965 -0.134187</pose>
+        <scale>1 1 1</scale>
+        <link name='base_footprint'>
+          <pose frame=''>0.23259 1.20313 0.050015 -0 -0.02965 -0.134187</pose>
+          <velocity>0 0 2e-05 -2e-05 -0.000145 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='front_left_wheel'>
+          <pose frame=''>0.211347 1.05464 0.089997 -3.14159 0.952246 3.00741</pose>
+          <velocity>-6e-06 1e-06 2e-05 -1.9e-05 -0.000146 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='front_right_wheel'>
+          <pose frame=''>0.251483 1.35194 0.089997 1e-06 0.331821 -0.134187</pose>
+          <velocity>-6e-06 1e-06 2e-05 -1.9e-05 -0.000143 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='person_standing'>
+        <pose frame=''>1.61692 0.007286 0.05 1e-06 1e-06 0.000743</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.61692 0.007286 0.05 1e-06 1e-06 0.000743</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1.69051 -1.18501 -1.1566 -1.90283 1.41287 -3.1132</acceleration>
+          <wrench>135.241 -94.8008 -92.528 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='unit_cylinder_0'>
+        <pose frame=''>4.26711 -2.69729 0.54999 0 -0 8e-06</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>4.26711 -2.69729 0.54999 0 -0 8e-06</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>4.08263 0.554332 13.8101 -0 1.26364 3.10019</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='my_robot'>
+      <link name='base_footprint'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>-0.001667 0 0.041333 0 -0 0</pose>
+          <mass>6.0001</mass>
+          <inertia>
+            <ixx>0.0304462</ixx>
+            <ixy>0</ixy>
+            <ixz>0.000191674</ixz>
+            <iyy>0.0461545</iyy>
+            <iyz>0</iyz>
+            <izz>0.0740583</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
+          <pose frame=''>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.02</length>
+              <radius>0.15</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__caster_back_link_collision_1'>
+          <pose frame=''>-0.135 0 0.029 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.025</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__caster_front_link_collision_2'>
+          <pose frame=''>0.115 0 0.027 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.025</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='base_footprint_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.001 0.001 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>__default__</uri>
+              <name>__default__</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__base_link_visual_1'>
+          <pose frame=''>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.45 0.3 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Blue</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__caster_back_link_visual_2'>
+          <pose frame=''>-0.115 0 0.029 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.025</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <script>
+              <uri>__default__</uri>
+              <name>__default__</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__caster_front_link_visual_3'>
+          <pose frame=''>0.115 0 0.027 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.025</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <script>
+              <uri>__default__</uri>
+              <name>__default__</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__hokuyo_link_visual_4'>
+          <pose frame=''>0.125 0 0.0725 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay/>
+        <velocity_decay/>
+        <velocity_decay/>
+        <velocity_decay/>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <sensor name='head_hokuyo_sensor' type='ray'>
+          <visualize>0</visualize>
+          <update_rate>40</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>720</samples>
+                <resolution>1</resolution>
+                <min_angle>-1.5708</min_angle>
+                <max_angle>1.5708</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.1</min>
+              <max>10</max>
+              <resolution>0.001</resolution>
+            </range>
+          </ray>
+          <plugin name='gazebo_ros_head_hokuyo_controller' filename='libgazebo_ros_laser.so'>
+            <topicName>/scan</topicName>
+            <frameName>hokuyo_link</frameName>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose frame=''>0.125 0 0.0725 0 -0 0</pose>
+        </sensor>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='front_left_wheel'>
+        <pose frame=''>0 -0.15 0.04 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>2.5</mass>
+          <inertia>
+            <ixx>0.00108333</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00108333</iyy>
+            <iyz>0</iyz>
+            <izz>0.002</izz>
+          </inertia>
+        </inertial>
+        <collision name='front_left_wheel_collision'>
+          <pose frame=''>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.02</length>
+              <radius>0.04</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+07</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='front_left_wheel_visual'>
+          <pose frame=''>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.02</length>
+              <radius>0.04</radius>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='front_left_wheel_joint' type='revolute'>
+        <child>front_left_wheel</child>
+        <parent>base_footprint</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='front_right_wheel'>
+        <pose frame=''>0 0.15 0.04 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>2.5</mass>
+          <inertia>
+            <ixx>0.00108333</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00108333</iyy>
+            <iyz>0</iyz>
+            <izz>0.002</izz>
+          </inertia>
+        </inertial>
+        <collision name='front_right_wheel_collision'>
+          <pose frame=''>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.02</length>
+              <radius>0.04</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+07</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='front_right_wheel_visual'>
+          <pose frame=''>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.02</length>
+              <radius>0.04</radius>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='front_right_wheel_joint' type='revolute'>
+        <child>front_right_wheel</child>
+        <parent>base_footprint</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <static>0</static>
+      <plugin name='differential_drive_controller' filename='libgazebo_ros_diff_drive.so'>
+        <legacyMode>true</legacyMode>
+        <rosDebugLevel>Debug</rosDebugLevel>
+        <publishWheelTF>false</publishWheelTF>
+        <robotNamespace>/</robotNamespace>
+        <publishTf>1</publishTf>
+        <publishWheelJointState>false</publishWheelJointState>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>100.0</updateRate>
+        <leftJoint>front_left_wheel_joint</leftJoint>
+        <rightJoint>front_right_wheel_joint</rightJoint>
+        <wheelSeparation>0.3</wheelSeparation>
+        <wheelDiameter>0.08</wheelDiameter>
+        <broadcastTF>1</broadcastTF>
+        <wheelTorque>30</wheelTorque>
+        <wheelAcceleration>1.8</wheelAcceleration>
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryFrame>odom</odometryFrame>
+        <odometryTopic>odom</odometryTopic>
+        <robotBaseFrame>base_footprint</robotBaseFrame>
+      </plugin>
+      <pose frame=''>0 0 0.5 0 -0 0</pose>
+    </model>
+  </world>
+</sdf>
