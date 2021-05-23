@@ -1,3 +1,9 @@
+![image](https://user-images.githubusercontent.com/48934506/119245058-b7f33000-bba8-11eb-830a-84621df12ca8.png)
+![image](https://user-images.githubusercontent.com/48934506/119245078-effa7300-bba8-11eb-81cb-057caf96ba7d.png)
+![image](https://user-images.githubusercontent.com/48934506/119245089-00125280-bba9-11eb-9b16-06bb6f8c82b9.png)
+![image](https://user-images.githubusercontent.com/48934506/119245105-1e784e00-bba9-11eb-94be-75dc04aec99c.png)
+![image](https://user-images.githubusercontent.com/48934506/119245119-41a2fd80-bba9-11eb-98a5-14d9bb820559.png)
+
 ```
 raw.githubusercontent被墙，以前的方法可能并不适用，在没有翻墙的情况下，即使把rosdep init生成的链接放到浏览器上也没法访问。所以，需要一点新的解决方法：
 
